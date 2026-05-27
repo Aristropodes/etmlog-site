@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Área do Cliente ETMLOG · Boletos, entregas e cotações em um único lugar</title>
+<meta name="description" content="Portal exclusivo ETMLOG. Acompanhe entregas, consulte boletos e títulos, visualize cotações e baixe documentos com segurança." />
+<meta name="theme-color" content="#082744" />
+<link rel="icon" type="image/svg+xml" href="../assets/logo/etmlog-simbolo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css" />
+<style>
+  /* Layout específico do portal (mock) */
+  .portal-wrap {
+    max-width: var(--max); margin: 0 auto; padding: 70px 28px 30px;
+    display: grid; grid-template-columns: 380px 1fr; gap: 40px;
+  }
+  .login-card {
+    background: linear-gradient(160deg, var(--dark), var(--darker));
+    color: #fff; border-radius: var(--radius-lg);
+    padding: 40px 36px; position: relative; overflow: hidden;
+  }
+  .login-card::after {
+    content: ""; position: absolute; top: -30%; right: -20%;
+    width: 70%; height: 160%;
+    background: radial-gradient(ellipse, rgba(242,117,7,.18), transparent 60%);
+  }
+  .login-card .lbl {
+    font-family: var(--mono); font-size: 11px; letter-spacing: .22em;
+    color: var(--orange); text-transform: uppercase; font-weight: 600;
+    margin-bottom: 18px; position: relative; z-index: 1;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .login-card .lbl::before { content:""; width:30px; height:1px; background:var(--orange); }
+  .login-card h2 {
+    font-size: 30px; font-weight: 800; color: #fff;
+    letter-spacing: -.025em; margin: 0 0 12px; position: relative; z-index: 1;
+  }
+  .login-card .deck {
+    color: #bcd1ec; font-size: 15px; margin: 0 0 28px; position: relative; z-index: 1;
+  }
+  .login-card form { position: relative; z-index: 1; }
+  .login-card .field { margin-bottom: 14px; }
+  .login-card .field label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .16em;
+    color: #9fb5d5; text-transform: uppercase; display:block; margin-bottom:6px;
+  }
+  .login-card .field input {
+    width: 100%; background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 8px; padding: 13px 14px;
+    color: #fff; font-family: var(--sans); font-size: 14.5px; outline: none;
+    transition: all var(--t);
+  }
+  .login-card .field input:focus { border-color: var(--orange); background: rgba(255,255,255,.06); }
+  .login-card .row {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 11px; color: #9fb5d5;
+    letter-spacing: .04em; margin: 8px 0 18px;
+  }
+  .login-card .row a { color: #cfdbef; }
+  .login-card .row a:hover { color: var(--orange); }
+  .login-card button { width: 100%; justify-content: center; }
+  .login-foot {
+    margin-top: 24px; padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,.08);
+    font-family: var(--mono); font-size: 11px; letter-spacing: .12em;
+    color: #9fb5d5; text-transform: uppercase; position: relative; z-index: 1;
+  }
+  .login-foot a { color: var(--orange); }
+
+  .portal-preview {
+    background: #fff; border: 1px solid var(--line);
+    border-radius: var(--radius-lg); padding: 38px 36px;
+  }
+  .portal-preview .ph {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 22px; border-bottom: 1px solid var(--line); margin-bottom: 24px;
+  }
+  .portal-preview .ph-l h3 {
+    font-size: 22px; font-weight: 700; color: var(--dark);
+    letter-spacing: -.015em; margin: 0;
+  }
+  .portal-preview .ph-l .meta {
+    font-family: var(--mono); font-size: 10.5px;
+    letter-spacing: .14em; color: var(--muted); text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .stat-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+    margin-bottom: 24px;
+  }
+  .stat-cell {
+    background: var(--bg); border: 1px solid var(--line);
+    border-radius: 10px; padding: 16px 18px;
+  }
+  .stat-cell .k {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .16em;
+    color: var(--orange); text-transform: uppercase; font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .stat-cell .v {
+    font-size: 22px; font-weight: 800; color: var(--dark); letter-spacing: -.02em;
+  }
+  .stat-cell .d {
+    font-size: 11.5px; color: var(--ink-soft); margin-top: 4px;
+    font-family: var(--mono); letter-spacing: .04em;
+  }
+  .tabs { display:flex; gap:6px; background:var(--gray); padding:5px; border-radius:10px; margin-bottom:18px; }
+  .tab { flex:1; background:transparent; border:0; padding:10px 14px; border-radius:7px;
+         font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; color:var(--ink-soft);
+         font-weight:600; transition:all var(--t); text-transform:uppercase; }
+  .tab.active { background:#fff; color:var(--dark); box-shadow:0 2px 6px rgba(13,43,82,.08); }
+
+  .pp-row {
+    display: grid; grid-template-columns: 90px 1fr auto auto; gap: 16px;
+    padding: 14px 0; border-bottom: 1px dashed var(--line);
+    align-items: center; font-size: 13.5px;
+  }
+  .pp-row:last-child { border-bottom: 0; }
+  .pp-row .id {
+    font-family: var(--mono); font-size: 11px; font-weight: 600;
+    color: var(--orange); letter-spacing: .08em;
+  }
+  .pp-row .from {
+    color: var(--dark); font-weight: 500;
+  }
+  .pp-row .from .to {
+    display: block; font-family: var(--mono); font-size: 10.5px;
+    color: var(--muted); letter-spacing: .04em; margin-top: 2px;
+  }
+  .pp-row .eta {
+    font-family: var(--mono); font-size: 11px; color: var(--ink-soft);
+    letter-spacing: .04em;
+  }
+
+  @media (max-width: 1080px) {
+    .portal-wrap { grid-template-columns: 1fr; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 780px) {
+    .portal-wrap { padding: 40px 18px; }
+    .pp-row { grid-template-columns: 70px 1fr; gap: 8px; }
+    .pp-row .eta, .pp-row .pill { grid-column: 2; justify-self: start; }
+  }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-inner">
+    <a href="../index.html" class="brand-mark" aria-label="ETMLOG · Página inicial">
+      <img class="logo" src="../assets/logo/etmlog-oficial-fundo-claro.svg" alt="Logotipo oficial ETMLOG" />
+      <span class="slash">/</span>
+      <span class="meta">Logística & Transporte</span>
+    </a>
+    <nav class="bar-nav" id="navScroll" aria-label="Menu principal">
+      <a href="../index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="cotacao.html">Cotação</a>
+      <a href="area-cliente.html" class="active">Área do Cliente</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <div class="bar-actions">
+      <a href="cotacao.html" class="btn btn-primary btn-sm">Solicitar cotação</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">≡</button>
+  </div>
+</header>
+
+<section class="page-head" style="padding-bottom: 40px;">
+  <div class="page-head-inner">
+    <div class="crumb"><a href="../index.html">Início</a><span class="sep">/</span> Área do Cliente</div>
+    <h1>Área do <em>Cliente</em></h1>
+    <p class="deck">Portal exclusivo ETMLOG. Acompanhe entregas, consulte títulos, baixe boletos e visualize seu histórico de cotações em um único lugar.</p>
+  </div>
+</section>
+
+<div class="portal-wrap">
+  <!-- LOGIN -->
+  <aside class="login-card">
+    <div class="lbl">// acesso seguro · ETM_PORTAL</div>
+    <h2>Entrar no portal</h2>
+    <p class="deck">Acesso restrito a clientes ETMLOG. Use seu CNPJ e senha cadastrada.</p>
+    <form onsubmit="event.preventDefault(); alert('Portal em implantação. Em breve seu acesso estará disponível.');">
+      <div class="field"><label>CNPJ</label><input type="text" placeholder="00.000.000/0001-00" required></div>
+      <div class="field"><label>Senha</label><input type="password" placeholder="••••••••" required></div>
+      <div class="row">
+        <label style="display:flex; align-items:center; gap:6px; color:#cfdbef; text-transform:none; letter-spacing:0; font-family:var(--sans);"><input type="checkbox" style="accent-color:var(--orange);"> Lembrar acesso</label>
+        <a href="#">Esqueci a senha</a>
+      </div>
+      <button type="submit" class="btn btn-primary">
+        Entrar
+        <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </button>
+    </form>
+    <div class="login-foot">
+      // ainda não é cliente? <a href="cotacao.html">Solicite uma cotação</a>
+    </div>
+  </aside>
+
+  <!-- PREVIEW -->
+  <section class="portal-preview">
+    <div class="ph">
+      <div class="ph-l">
+        <h3>Painel da operação</h3>
+        <div class="meta">// pré-visualização · cliente exemplo</div>
+      </div>
+      <span class="status-led">SISTEMA OPERANDO</span>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-cell"><div class="k">Entregas/mês</div><div class="v">42</div><div class="d">+8% vs. mês anterior</div></div>
+      <div class="stat-cell"><div class="k">Em trânsito</div><div class="v">6</div><div class="d">// rastreáveis</div></div>
+      <div class="stat-cell"><div class="k">Boletos abertos</div><div class="v">2</div><div class="d">// próx. venc. 30/05</div></div>
+      <div class="stat-cell"><div class="k">Pontualidade</div><div class="v">98%</div><div class="d">// últimos 90 dias</div></div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="entregas">Entregas</button>
+      <button class="tab" data-tab="boletos">Boletos</button>
+      <button class="tab" data-tab="cotacoes">Cotações</button>
+      <button class="tab" data-tab="docs">Documentos</button>
+    </div>
+
+    <div class="tab-panel" id="entregas">
+      <div class="pp-row">
+        <div class="id">ETM-1042</div>
+        <div class="from">Contagem · MG <span class="to">→ São Paulo · SP</span></div>
+        <div class="eta">ETA 14:20</div>
+        <span class="pill orange">EM TRÂNSITO</span>
+      </div>
+      <div class="pp-row">
+        <div class="id">ETM-1039</div>
+        <div class="from">Betim · MG <span class="to">→ Curitiba · PR</span></div>
+        <div class="eta">09:10 · hoje</div>
+        <span class="pill green">ENTREGUE</span>
+      </div>
+      <div class="pp-row">
+        <div class="id">ETM-1051</div>
+        <div class="from">Contagem · MG <span class="to">→ Montevideo · UY</span></div>
+        <div class="eta">ETA 22/05</div>
+        <span class="pill orange">EM TRÂNSITO</span>
+      </div>
+      <div class="pp-row">
+        <div class="id">ETM-1058</div>
+        <div class="from">Sete Lagoas · MG <span class="to">→ Rio de Janeiro · RJ</span></div>
+        <div class="eta">ETA 18:40</div>
+        <span class="pill blue">CARREGANDO</span>
+      </div>
+      <div class="pp-row">
+        <div class="id">ETM-1063</div>
+        <div class="from">Contagem · MG <span class="to">→ Recife · PE (Aéreo)</span></div>
+        <div class="eta">ETA 11:30</div>
+        <span class="pill orange">EM TRÂNSITO</span>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="boletos" hidden>
+      <div class="pp-row">
+        <div class="id">B-8842</div>
+        <div class="from">NF 45221 <span class="to">// referente a ETM-1042</span></div>
+        <div class="eta">R$ 4.820,00</div>
+        <span class="pill orange">VENCE 30/05</span>
+      </div>
+      <div class="pp-row">
+        <div class="id">B-8839</div>
+        <div class="from">NF 45198 <span class="to">// referente a ETM-1039</span></div>
+        <div class="eta">R$ 2.150,00</div>
+        <span class="pill orange">VENCE 05/06</span>
+      </div>
+      <div class="pp-row">
+        <div class="id">B-8821</div>
+        <div class="from">NF 45122 <span class="to">// abr/2026</span></div>
+        <div class="eta">R$ 3.640,00</div>
+        <span class="pill green">PAGO</span>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="cotacoes" hidden>
+      <div class="pp-row">
+        <div class="id">COT-0184</div>
+        <div class="from">São Paulo · SP <span class="to">→ Contagem · MG · 220 kg</span></div>
+        <div class="eta">19/05</div>
+        <span class="pill blue">EM ANÁLISE</span>
+      </div>
+      <div class="pp-row">
+        <div class="id">COT-0179</div>
+        <div class="from">Contagem · MG <span class="to">→ Recife · PE (Aéreo) · 38 kg</span></div>
+        <div class="eta">15/05</div>
+        <span class="pill green">APROVADA</span>
+      </div>
+      <div class="pp-row">
+        <div class="id">COT-0171</div>
+        <div class="from">Belo Horizonte · MG <span class="to">→ Montevideo · UY · 1.200 kg</span></div>
+        <div class="eta">10/05</div>
+        <span class="pill green">APROVADA</span>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="docs" hidden>
+      <div class="pp-row">
+        <div class="id">CT-e</div>
+        <div class="from">CT-e 0000456 <span class="to">// ETM-1042</span></div>
+        <div class="eta">PDF</div>
+        <span class="pill blue">DISPONÍVEL</span>
+      </div>
+      <div class="pp-row">
+        <div class="id">CT-e</div>
+        <div class="from">CT-e 0000452 <span class="to">// ETM-1039</span></div>
+        <div class="eta">PDF</div>
+        <span class="pill blue">DISPONÍVEL</span>
+      </div>
+      <div class="pp-row">
+        <div class="id">COMPROV.</div>
+        <div class="from">Canhoto digital <span class="to">// ETM-1039 · entrega 09:10</span></div>
+        <div class="eta">PNG</div>
+        <span class="pill green">CONFIRMADO</span>
+      </div>
+    </div>
+
+    <div style="margin-top:20px; padding-top:18px; border-top:1px solid var(--line); font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; color:var(--muted); text-transform:uppercase;">
+      // imagens ilustrativas · portal em implantação · acesso restrito a clientes ETMLOG
+    </div>
+  </section>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img class="logo" src="../assets/logo/etmlog-oficial-branco.svg" alt="ETMLOG · Logotipo institucional" />
+        <p class="desc">ETMLOG Logística e Transporte de Cargas. Há mais de 25 anos movendo a indústria brasileira com qualidade certificada e operação no Mercosul.</p>
+        <span class="iso">ISO 9001:2015 · Bureau Veritas</span>
+      </div>
+      <div>
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="sobre.html">Sobre a ETMLOG</a></li>
+          <li><a href="sobre.html#valores">Missão, Visão e Valores</a></li>
+          <li><a href="sobre.html#iso">Certificação ISO 9001</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Serviços</h5>
+        <ul>
+          <li><a href="servicos.html#consolidadas">Cargas Consolidadas</a></li>
+          <li><a href="servicos.html#fracionadas">Cargas Fracionadas</a></li>
+          <li><a href="servicos.html#aereas">Cargas Aéreas</a></li>
+          <li><a href="servicos.html#jit">Just in Time</a></li>
+          <li><a href="servicos.html#internacional">Mercosul</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Acesso</h5>
+        <ul>
+          <li><a href="cotacao.html">Solicitar cotação</a></li>
+          <li><a href="area-cliente.html">Área do Cliente</a></li>
+          <li><a href="https://wa.me/5531996198893" target="_blank" rel="noopener">WhatsApp · (31) 99619-8893</a></li>
+          <li><a href="tel:+553133623732">Telefone · (31) 3362-3732</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span class="sm">© ETMLOG · Logística e Transporte de Cargas · Grupo ETM · Contagem/MG</span>
+      <div class="social">
+        <a href="https://facebook.com/etmlogistica" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9V15h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.3V12h2.3l-.4 3h-1.9v6.9A10 10 0 0 0 22 12z"/></svg></a>
+        <a href="https://wa.me/5531996198893" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.1 4.9A10 10 0 0 0 2.5 17.4L1 23l5.8-1.5A10 10 0 1 0 19.1 4.9z"/></svg></a>
+        <a href="mailto:contato@etmlog.com.br" aria-label="E-mail"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5531996198893" target="_blank" rel="noopener" class="wa-float" aria-label="Falar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.1 4.9A10 10 0 0 0 2.5 17.4L1 23l5.8-1.5A10 10 0 1 0 19.1 4.9z"/></svg>
+</a>
+
+<script src="../js/site.js" defer></script>
+<script>
+  // tabs do portal
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.tab-panel').forEach(p => p.hidden = true);
+      const id = btn.getAttribute('data-tab');
+      const panel = document.getElementById(id);
+      if (panel) panel.hidden = false;
+    });
+  });
+</script>
+</body>
+</html>

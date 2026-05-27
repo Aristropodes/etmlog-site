@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Cotação de Frete ETMLOG · Solicite sua proposta personalizada</title>
+<meta name="description" content="Solicite cotação rápida de frete com a ETMLOG. Origem, destino, peso, medidas e valor da NF. Resposta em até 2h úteis com SLA documentado." />
+<meta name="theme-color" content="#082744" />
+<link rel="icon" type="image/svg+xml" href="../assets/logo/etmlog-simbolo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-inner">
+    <a href="../index.html" class="brand-mark" aria-label="ETMLOG · Página inicial">
+      <img class="logo" src="../assets/logo/etmlog-oficial-fundo-claro.svg" alt="Logotipo oficial ETMLOG" />
+      <span class="slash">/</span>
+      <span class="meta">Logística & Transporte</span>
+    </a>
+    <nav class="bar-nav" id="navScroll" aria-label="Menu principal">
+      <a href="../index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="cotacao.html" class="active">Cotação</a>
+      <a href="area-cliente.html">Área do Cliente</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <div class="bar-actions">
+      <a href="area-cliente.html" class="btn btn-outline btn-sm">Área do Cliente</a>
+      <a href="#form" class="btn btn-primary btn-sm">Ir ao formulário</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">≡</button>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="page-head-inner">
+    <div class="crumb"><a href="../index.html">Início</a><span class="sep">/</span> Cotação de frete</div>
+    <h1>Solicite sua <em>cotação</em>.<br>Resposta em até 2h úteis.</h1>
+    <p class="deck">Preencha os dados da sua operação. Nossa equipe comercial retorna com a melhor solução — rodoviário, aéreo, fracionado ou JIT — e SLA documentado.</p>
+  </div>
+</section>
+
+<section class="section" id="form">
+  <div class="quote-block" style="margin-top:0;">
+    <div class="quote-block-grid">
+      <div>
+        <div class="lbl">// cotação personalizada · ETM_QUOTE</div>
+        <h3>Cotação <em>direta</em>, sem cadastro.</h3>
+        <p>Resposta humana em até 2h úteis. Nossa equipe analisa sua operação e propõe a solução com melhor relação custo, prazo e segurança.</p>
+
+        <div class="features">
+          <div class="feat">Sem cadastro obrigatório</div>
+          <div class="feat">Atendimento humano e próximo</div>
+          <div class="feat">Proposta com SLA documentado</div>
+          <div class="feat">Cobertura nacional e Mercosul</div>
+          <div class="feat">Modais rodoviário e aéreo integrados</div>
+        </div>
+
+        <div style="margin-top:32px; padding:20px 22px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:12px;">
+          <div style="font-family:var(--mono); font-size:10.5px; letter-spacing:.18em; color:#9fb5d5; text-transform:uppercase; margin-bottom:10px;">// atendimento direto</div>
+          <div style="color:#fff; font-size:15px; line-height:1.6;">
+            <strong style="color:#fff;">WhatsApp:</strong> <a href="https://wa.me/5531996198893" target="_blank" rel="noopener" style="color:var(--orange);">(31) 99619-8893</a><br>
+            <strong style="color:#fff;">Telefone:</strong> <a href="tel:+553133623732" style="color:var(--orange);">(31) 3362-3732</a>
+          </div>
+        </div>
+      </div>
+
+      <form class="quote-form" id="fullQuote">
+        <div class="form-head">
+          <span>// formulário cotação · ETM_QUOTE</span>
+          <span class="live">ABERTO</span>
+        </div>
+        <div class="field-grid">
+          <div class="field full"><label>Tipo de operação</label>
+            <select name="tipo">
+              <option>Cargas consolidadas</option>
+              <option>Cargas complementares</option>
+              <option>Cargas fracionadas</option>
+              <option>Cargas aéreas</option>
+              <option>Just in Time industrial</option>
+              <option>Operação internacional (Mercosul)</option>
+            </select>
+          </div>
+          <div class="field"><label>Origem · Cidade/UF</label><input type="text" name="origem" placeholder="Ex.: Contagem/MG" required></div>
+          <div class="field"><label>Destino · Cidade/UF</label><input type="text" name="destino" placeholder="Ex.: São Paulo/SP" required></div>
+          <div class="field"><label>Peso total (kg)</label><input type="number" name="peso" placeholder="250" required></div>
+          <div class="field"><label>Volumes (qtd)</label><input type="number" name="volumes" placeholder="3" required></div>
+          <div class="field"><label>Medidas (C x L x A em cm)</label><input type="text" name="medidas" placeholder="100 x 80 x 60"></div>
+          <div class="field"><label>Valor da NF (R$)</label><input type="text" name="nf" placeholder="R$ 5.000,00"></div>
+          <div class="field"><label>Frequência</label>
+            <select name="frequencia">
+              <option>Pontual / Spot</option>
+              <option>Recorrente · semanal</option>
+              <option>Recorrente · diário (JIT)</option>
+              <option>Outra</option>
+            </select>
+          </div>
+          <div class="field"><label>Data desejada</label><input type="date" name="data"></div>
+          <div class="field full"><label>Empresa / CNPJ</label><input type="text" name="empresa" placeholder="Razão social ou CNPJ"></div>
+          <div class="field"><label>Nome do responsável</label><input type="text" name="nome" required></div>
+          <div class="field"><label>E-mail ou WhatsApp</label><input type="text" name="contato" placeholder="contato@empresa.com" required></div>
+          <div class="field full"><label>Observações</label><textarea name="obs" placeholder="Conte se a carga tem alguma particularidade: temperatura controlada, fragilidade, etc."></textarea></div>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Enviar solicitação de cotação
+          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </button>
+        <div style="margin-top:14px; font-family:var(--mono); font-size:10.5px; color:#9fb5d5; letter-spacing:.1em; text-transform:uppercase;">// resposta em até 2h úteis · sem cadastro</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img class="logo" src="../assets/logo/etmlog-oficial-branco.svg" alt="ETMLOG · Logotipo institucional" />
+        <p class="desc">ETMLOG Logística e Transporte de Cargas. Há mais de 25 anos movendo a indústria brasileira com qualidade certificada e operação no Mercosul.</p>
+        <span class="iso">ISO 9001:2015 · Bureau Veritas</span>
+      </div>
+      <div>
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="sobre.html">Sobre a ETMLOG</a></li>
+          <li><a href="sobre.html#valores">Missão, Visão e Valores</a></li>
+          <li><a href="sobre.html#iso">Certificação ISO 9001</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Serviços</h5>
+        <ul>
+          <li><a href="servicos.html#consolidadas">Cargas Consolidadas</a></li>
+          <li><a href="servicos.html#fracionadas">Cargas Fracionadas</a></li>
+          <li><a href="servicos.html#aereas">Cargas Aéreas</a></li>
+          <li><a href="servicos.html#jit">Just in Time</a></li>
+          <li><a href="servicos.html#internacional">Mercosul</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Acesso</h5>
+        <ul>
+          <li><a href="cotacao.html">Solicitar cotação</a></li>
+          <li><a href="area-cliente.html">Área do Cliente</a></li>
+          <li><a href="https://wa.me/5531996198893" target="_blank" rel="noopener">WhatsApp · (31) 99619-8893</a></li>
+          <li><a href="tel:+553133623732">Telefone · (31) 3362-3732</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span class="sm">© ETMLOG · Logística e Transporte de Cargas · Grupo ETM · Contagem/MG</span>
+      <div class="social">
+        <a href="https://facebook.com/etmlogistica" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9V15h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.3V12h2.3l-.4 3h-1.9v6.9A10 10 0 0 0 22 12z"/></svg></a>
+        <a href="https://wa.me/5531996198893" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.1 4.9A10 10 0 0 0 2.5 17.4L1 23l5.8-1.5A10 10 0 1 0 19.1 4.9z"/></svg></a>
+        <a href="mailto:contato@etmlog.com.br" aria-label="E-mail"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5531996198893" target="_blank" rel="noopener" class="wa-float" aria-label="Falar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.1 4.9A10 10 0 0 0 2.5 17.4L1 23l5.8-1.5A10 10 0 1 0 19.1 4.9z"/></svg>
+</a>
+<script src="../js/site.js" defer></script>
+</body>
+</html>

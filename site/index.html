@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ETMLOG · Logística Parceira da Indústria · Transporte de Cargas com ISO 9001</title>
+<meta name="description" content="ETMLOG — Logística e Transporte de Cargas. Há mais de 25 anos movendo a indústria brasileira com certificação ISO 9001, 98% de pontualidade e operação no Mercosul. Cotação rápida e área do cliente." />
+<meta name="theme-color" content="#082744" />
+<link rel="icon" type="image/svg+xml" href="assets/logo/etmlog-simbolo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ====================== TOP BAR ====================== -->
+<header class="bar">
+  <div class="bar-inner">
+    <a href="index.html" class="brand-mark" aria-label="ETMLOG · Página inicial">
+      <img class="logo" src="assets/logo/etmlog-oficial-fundo-claro.svg" alt="Logotipo oficial ETMLOG" />
+      <span class="slash">/</span>
+      <span class="meta">Logística & Transporte</span>
+    </a>
+    <nav class="bar-nav" id="navScroll" aria-label="Menu principal">
+      <a href="index.html" class="active">Início</a>
+      <a href="paginas/sobre.html">Sobre</a>
+      <a href="paginas/servicos.html">Serviços</a>
+      <a href="paginas/cotacao.html">Cotação</a>
+      <a href="paginas/area-cliente.html">Área do Cliente</a>
+      <a href="paginas/contato.html">Contato</a>
+    </nav>
+    <div class="bar-actions">
+      <a href="paginas/area-cliente.html" class="btn btn-outline btn-sm">Área do Cliente</a>
+      <a href="paginas/cotacao.html" class="btn btn-primary btn-sm">
+        Solicitar cotação
+        <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">≡</button>
+  </div>
+</header>
+
+<!-- ====================== HERO ====================== -->
+<section class="hero" id="topo">
+  <div class="hero-inner">
+    <div class="hero-top">
+      <span class="tag"><span class="dot"></span>Há 25+ anos no transporte de cargas</span>
+      <span class="tag iso"><span class="dot"></span>ISO 9001:2015 · Bureau Veritas</span>
+      <span class="tag">Operação Brasil &amp; Mercosul</span>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">ETMLOG · Logística & Transporte de Cargas</div>
+        <h1 class="hero-title">
+          <span class="line1">Logística <em>parceira</em> da indústria.</span>
+          <span class="line2">Movendo resultados há mais de 25 anos.</span>
+        </h1>
+        <p class="hero-lead">
+          Soluções logísticas com a precisão que a produção exige.
+          Tecnologia, qualidade certificada e operação auditada — do JIT industrial à carga aérea, do nacional ao Mercosul.
+        </p>
+        <div class="hero-cta">
+          <a href="paginas/cotacao.html" class="btn btn-primary">
+            Solicitar cotação
+            <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </a>
+          <a href="paginas/area-cliente.html" class="btn btn-ghost">
+            Acessar Área do Cliente
+          </a>
+        </div>
+      </div>
+
+      <!-- Visual: painel de rastreamento ao vivo -->
+      <aside class="hero-visual" aria-label="Painel operacional ETMLOG">
+        <div class="hv-head">
+          <span>// painel_operacional · ETM_OPS</span>
+          <span class="live">LIVE</span>
+        </div>
+        <div class="hv-map" role="img" aria-label="Mapa estilizado com rotas e pontos de rastreamento">
+          <div class="hv-route">
+            <svg viewBox="0 0 400 260" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="rg1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#F27507" stop-opacity=".9"/>
+                  <stop offset="100%" stop-color="#3EA5F0" stop-opacity=".9"/>
+                </linearGradient>
+              </defs>
+              <path d="M72 65 Q 160 30 200 125 T 320 188" stroke="url(#rg1)" stroke-width="2.5" fill="none" stroke-dasharray="6 6">
+                <animate attributeName="stroke-dashoffset" from="0" to="-200" dur="9s" repeatCount="indefinite"/>
+              </path>
+              <path d="M40 200 Q 130 220 220 170 T 380 140" stroke="rgba(255,255,255,.18)" stroke-width="1.5" fill="none" stroke-dasharray="3 6"/>
+            </svg>
+          </div>
+          <span class="hv-pin start" title="Origem"></span>
+          <span class="hv-pin mid" title="Em trânsito"></span>
+          <span class="hv-pin end" title="Destino"></span>
+        </div>
+        <div class="hv-stats">
+          <div class="hv-stat"><div class="k">Pontualidade</div><div class="v">98%</div></div>
+          <div class="hv-stat"><div class="k">Operações/ano</div><div class="v">3.600t</div></div>
+          <div class="hv-stat"><div class="k">Países</div><div class="v">02</div></div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="hero-rule">
+      <div class="cell"><div class="k">/01 experiência</div><div class="v">25+ <em>anos</em></div></div>
+      <div class="cell"><div class="k">/02 pontualidade</div><div class="v">98%</div></div>
+      <div class="cell"><div class="k">/03 certificação</div><div class="v">ISO 9001</div></div>
+      <div class="cell"><div class="k">/04 mercosul</div><div class="v">BR / UY</div></div>
+      <div class="cell"><div class="k">/05 modais</div><div class="v">Rodo + Aéreo</div></div>
+    </div>
+    <div class="hero-pad-bottom"></div>
+  </div>
+</section>
+
+<!-- ====================== SLOGAN STRIP ====================== -->
+<section class="slogan-strip" aria-label="Slogan institucional">
+  <div class="syscode">// slogan_oficial · ETMLOG_brand_essence</div>
+  <h2>
+    <span class="a">A logística nos conecta.</span>
+    <span class="b">As pessoas nos unem.</span>
+  </h2>
+</section>
+
+<!-- ====================== SOBRE ====================== -->
+<section class="section" id="sobre">
+  <div class="section-head">
+    <div class="section-num">/01</div>
+    <h2>Sobre a <em>ETMLOG</em></h2>
+    <div class="deck">Quem somos, de onde viemos e como operamos como um sistema integrado.</div>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-text">
+      <p class="lead-p">
+        Há mais de <strong>25 anos</strong> o Grupo ETM constrói sua trajetória no mercado de logística do Brasil.
+        Fundada em <strong>Contagem (MG)</strong>, no coração industrial da Região Metropolitana de Belo Horizonte,
+        a ETMLOG nasceu para ser mais do que uma transportadora — uma parceira estratégica de quem precisa mover mercadorias com segurança, pontualidade e inteligência.
+      </p>
+      <p>
+        A certificação <strong>ISO 9001:2015</strong>, obtida em 2019 pelo Bureau Veritas, marcou um ponto de inflexão:
+        a prova de que nosso compromisso com a qualidade é sistemático, auditado e real. Consolidamos uma operação sólida,
+        com presença no <strong>Mercosul</strong> e portfólio completo de modais — do <strong>Just in Time</strong> que abastece linhas de produção às cargas aéreas que entregam o urgente.
+      </p>
+
+      <div class="about-stats">
+        <div class="about-stat">
+          <div class="k">/01 anos de mercado</div>
+          <div class="v">25+</div>
+          <div class="d">Operação consolidada desde a fundação.</div>
+        </div>
+        <div class="about-stat">
+          <div class="k">/02 pontualidade</div>
+          <div class="v">98%</div>
+          <div class="d">Documentada e auditada anualmente.</div>
+        </div>
+        <div class="about-stat">
+          <div class="k">/03 toneladas/ano</div>
+          <div class="v">3.600t</div>
+          <div class="d">Volume movimentado pela operação.</div>
+        </div>
+        <div class="about-stat">
+          <div class="k">/04 atuação</div>
+          <div class="v">BR + UY</div>
+          <div class="d">Brasil e Uruguai, com expansão Mercosul.</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 28px;">
+        <a href="paginas/sobre.html" class="btn btn-outline">
+          Conheça a ETMLOG
+          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </a>
+      </div>
+    </div>
+
+    <aside class="about-visual">
+      <span class="iso-stamp">ISO 9001:2015 · Bureau Veritas</span>
+      <h3>Operação industrial sólida, sistematizada e auditada.</h3>
+      <p>Mais que uma transportadora — uma parceira estratégica da produção brasileira.</p>
+      <div class="meta-grid">
+        <div class="meta-cell"><div class="k">// sede</div><div class="v">Contagem · MG</div></div>
+        <div class="meta-cell"><div class="k">// grupo</div><div class="v">Grupo ETM</div></div>
+        <div class="meta-cell"><div class="k">// fundação</div><div class="v">25+ anos</div></div>
+        <div class="meta-cell"><div class="k">// status</div><div class="v" style="color:#22d775;">ATIVO</div></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ====================== SERVIÇOS ====================== -->
+<section class="section" id="servicos">
+  <div class="section-head">
+    <div class="section-num">/02</div>
+    <h2>Portfólio de <em>Serviços</em></h2>
+    <div class="deck">Soluções de logística industrial, todas sob a mesma certificação ISO 9001.</div>
+  </div>
+
+  <p class="lead-p" style="margin-bottom:36px;">
+    Um portfólio completo para o ambiente industrial: do alto volume contínuo ao urgente aéreo, do nacional ao Mercosul.
+  </p>
+
+  <div class="svc-grid">
+    <article class="svc">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="5" width="14" height="13" rx="1"/><path d="M15 8h4l3 4v6h-7"/><circle cx="6" cy="20" r="2"/><circle cx="18" cy="20" r="2"/></svg>
+      </div>
+      <div class="meta"><span>// industrial · 01</span><span class="status">ATIVO</span></div>
+      <h4>Cargas Consolidadas</h4>
+      <p>Transporte de grandes volumes via trucks e carretas. Ideal para produção contínua.</p>
+      <a href="paginas/servicos.html#consolidadas" class="more">Saiba mais →</a>
+    </article>
+
+    <article class="svc">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8H8l-2 4 2 4h13M3 8h2M3 16h2M3 12h2"/><circle cx="17" cy="8" r="1"/><circle cx="17" cy="16" r="1"/></svg>
+      </div>
+      <div class="meta"><span>// industrial · 02</span><span class="status">ATIVO</span></div>
+      <h4>Cargas Complementares</h4>
+      <p>Quando o volume não preenche o veículo, reduzimos o custo sem abrir mão do prazo.</p>
+      <a href="paginas/servicos.html#complementares" class="more">Saiba mais →</a>
+    </article>
+
+    <article class="svc">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M8 14h2M14 14h2"/></svg>
+      </div>
+      <div class="meta"><span>// industrial · 03</span><span class="status">ATIVO</span></div>
+      <h4>Cargas Fracionadas</h4>
+      <p>Pequenos volumes com rastreabilidade completa e pontualidade documentada.</p>
+      <a href="paginas/servicos.html#fracionadas" class="more">Saiba mais →</a>
+    </article>
+
+    <article class="svc">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 1 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+      </div>
+      <div class="meta"><span>// industrial · 04</span><span class="status">ATIVO</span></div>
+      <h4>Cargas Aéreas</h4>
+      <p>Entregas expressas de peças e insumos urgentes nas principais capitais brasileiras.</p>
+      <a href="paginas/servicos.html#aereas" class="more">Saiba mais →</a>
+    </article>
+
+    <article class="svc">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      </div>
+      <div class="meta"><span>// industrial · 05</span><span class="status">ATIVO</span></div>
+      <h4>Just in Time Industrial</h4>
+      <p>Abastecimento preciso da linha de produção na quantidade e hora exatas.</p>
+      <a href="paginas/servicos.html#jit" class="more">Saiba mais →</a>
+    </article>
+
+    <article class="svc">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+      </div>
+      <div class="meta"><span>// internacional · 06</span><span class="status">ATIVO</span></div>
+      <h4>Operação Internacional</h4>
+      <p>Brasil–Uruguai com documentação completa. Expansão: Argentina e Paraguai.</p>
+      <a href="paginas/servicos.html#internacional" class="more">Saiba mais →</a>
+    </article>
+  </div>
+</section>
+
+<!-- ====================== DIFERENCIAIS ====================== -->
+<section class="section" id="diferenciais">
+  <div class="section-head">
+    <div class="section-num">/03</div>
+    <h2>Por que <em>ETMLOG</em></h2>
+    <div class="deck">Uma operação certificada, com cultura industrial e relacionamento próximo do cliente.</div>
+  </div>
+
+  <div class="diff-grid">
+    <div class="diff">
+      <div class="num">/01</div>
+      <h4>Certificação ISO 9001</h4>
+      <p>Processos auditados pelo Bureau Veritas — qualidade como padrão inegociável.</p>
+    </div>
+    <div class="diff">
+      <div class="num">/02</div>
+      <h4>Pontualidade 98%</h4>
+      <p>Indicador documentado e revisado anualmente. Cumprir prazo é parte do contrato.</p>
+    </div>
+    <div class="diff">
+      <div class="num">/03</div>
+      <h4>Just in Time</h4>
+      <p>Abastecimento sincronizado com a linha de produção do cliente.</p>
+    </div>
+    <div class="diff">
+      <div class="num">/04</div>
+      <h4>Operação Mercosul</h4>
+      <p>Brasil e Uruguai com documentação completa e fluxo internacional.</p>
+    </div>
+    <div class="diff">
+      <div class="num">/05</div>
+      <h4>Rastreabilidade Total</h4>
+      <p>Acompanhamento operacional do embarque à entrega final.</p>
+    </div>
+    <div class="diff">
+      <div class="num">/06</div>
+      <h4>Equipe Experiente</h4>
+      <p>Time formado em logística industrial pesada, treinado e certificado.</p>
+    </div>
+    <div class="diff">
+      <div class="num">/07</div>
+      <h4>Modais Integrados</h4>
+      <p>Rodoviário + aéreo + complementar — a solução certa para cada operação.</p>
+    </div>
+    <div class="diff">
+      <div class="num">/08</div>
+      <h4>Atendimento Próximo</h4>
+      <p>Suporte humano em até 2h úteis. Relacionamento de parceiro, não fornecedor.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== TECH / RASTREAMENTO ====================== -->
+<section class="section">
+  <div class="tech-block">
+    <div class="tech-grid">
+      <div>
+        <div class="eyebrow">// tecnologia & rastreamento</div>
+        <h3>Operação <em>conectada</em>, do embarque ao destino.</h3>
+        <p>Tecnologia aplicada à logística para dar visibilidade total da sua carga. Painel operacional, status em tempo real, indicadores e histórico completo — tudo em um único lugar.</p>
+        <div style="margin-top:28px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="paginas/area-cliente.html" class="btn btn-primary">
+            Acessar Área do Cliente
+            <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </a>
+          <a href="paginas/cotacao.html" class="btn btn-ghost">Solicitar cotação</a>
+        </div>
+      </div>
+
+      <div class="tech-panel" aria-label="Painel de rastreamento (exemplo ilustrativo)">
+        <div class="tech-panel-head">
+          <div class="tp-title">// painel de embarques · ETM_TRACK</div>
+          <div class="tp-live">LIVE</div>
+        </div>
+        <div class="tp-row">
+          <div class="id">ETM-1042</div>
+          <div class="from">Contagem · MG <span class="to">→ São Paulo · SP</span></div>
+          <div class="eta">ETA 14:20</div>
+          <div class="status transit">EM TRÂNSITO</div>
+        </div>
+        <div class="tp-row">
+          <div class="id">ETM-1039</div>
+          <div class="from">Betim · MG <span class="to">→ Curitiba · PR</span></div>
+          <div class="eta">ETA 09:10</div>
+          <div class="status deliver">ENTREGUE</div>
+        </div>
+        <div class="tp-row">
+          <div class="id">ETM-1051</div>
+          <div class="from">Contagem · MG <span class="to">→ Montevideo · UY</span></div>
+          <div class="eta">ETA 22/05</div>
+          <div class="status transit">EM TRÂNSITO</div>
+        </div>
+        <div class="tp-row">
+          <div class="id">ETM-1058</div>
+          <div class="from">Sete Lagoas · MG <span class="to">→ Rio de Janeiro · RJ</span></div>
+          <div class="eta">ETA 18:40</div>
+          <div class="status load">CARREGANDO</div>
+        </div>
+        <div class="tp-row">
+          <div class="id">ETM-1063</div>
+          <div class="from">Contagem · MG <span class="to">→ Recife · PE (Aéreo)</span></div>
+          <div class="eta">ETA 11:30</div>
+          <div class="status transit">EM TRÂNSITO</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== ÁREA DO CLIENTE ====================== -->
+<section class="section" id="cliente">
+  <div class="section-head">
+    <div class="section-num">/04</div>
+    <h2>Área do <em>Cliente</em></h2>
+    <div class="deck">Acompanhe operações, boletos e documentos em um portal exclusivo.</div>
+  </div>
+
+  <div class="client-area">
+    <div>
+      <span class="tag light" style="margin-bottom:18px;"><span class="dot"></span>Acesso exclusivo</span>
+      <h3 style="font-size:32px; font-weight:800; color:var(--dark); letter-spacing:-.025em; margin:0 0 14px;">Tudo da sua operação em um único lugar.</h3>
+      <p>Consulte títulos, baixe boletos, acompanhe entregas e visualize seu histórico de cotações com a ETMLOG. Uma plataforma pensada para quem opera com volume e precisa de visibilidade.</p>
+
+      <div class="feats-list">
+        <div class="feat-li">Consulta de boletos</div>
+        <div class="feat-li">Títulos em aberto</div>
+        <div class="feat-li">Status de entregas</div>
+        <div class="feat-li">Histórico de cotações</div>
+        <div class="feat-li">Documentos & comprovantes</div>
+        <div class="feat-li">Indicadores operacionais</div>
+      </div>
+
+      <a href="paginas/area-cliente.html" class="btn btn-dark">
+        Acessar portal
+        <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </a>
+    </div>
+
+    <div class="client-mock" aria-label="Prévia da Área do Cliente">
+      <div class="mock-head">
+        <div class="mh-user">
+          <div class="avatar">IC</div>
+          <div>
+            <div class="mh-name">Indústria Conectada Ltda.</div>
+            <div class="mh-co">// cnpj 00.000.000/0001-00</div>
+          </div>
+        </div>
+        <span class="pill green">ATIVO</span>
+      </div>
+      <div class="mock-row">
+        <div class="mr-l">Cotação #COT-2026-0184<span class="sub">SP → MG · Carga fracionada · 220 kg</span></div>
+        <span class="pill blue">EM ANÁLISE</span>
+      </div>
+      <div class="mock-row">
+        <div class="mr-l">Embarque ETM-1042<span class="sub">Contagem · MG → São Paulo · SP</span></div>
+        <span class="pill orange">EM TRÂNSITO</span>
+      </div>
+      <div class="mock-row">
+        <div class="mr-l">Boleto Nº 8842<span class="sub">Vencimento · 30/05/2026 · R$ 4.820,00</span></div>
+        <span class="pill orange">A VENCER</span>
+      </div>
+      <div class="mock-row">
+        <div class="mr-l">Entrega ETM-1039<span class="sub">Betim · MG → Curitiba · PR</span></div>
+        <span class="pill green">ENTREGUE</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== COTAÇÃO ====================== -->
+<section class="section" id="cotacao">
+  <div class="section-head">
+    <div class="section-num">/05</div>
+    <h2>Solicitar <em>Cotação</em></h2>
+    <div class="deck">Rápido, direto e sem cadastro — receba sua proposta personalizada.</div>
+  </div>
+
+  <div class="quote-block">
+    <div class="quote-block-grid">
+      <div>
+        <div class="lbl">// cotação rápida · ETM_QUOTE</div>
+        <h3>Movimente sua carga com quem <em>cumpre prazo</em>.</h3>
+        <p>Preencha os dados básicos e nossa equipe comercial retorna com a melhor solução para sua operação — rodoviário, aéreo, fracionado ou JIT.</p>
+
+        <div class="features">
+          <div class="feat">Resposta em até 2h úteis</div>
+          <div class="feat">Sem cadastro obrigatório</div>
+          <div class="feat">Proposta com SLA documentado</div>
+          <div class="feat">Atendimento humano e próximo</div>
+        </div>
+
+        <a href="paginas/cotacao.html" class="btn btn-ghost">
+          Cotação completa
+          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </a>
+      </div>
+
+      <form class="quote-form" id="quickQuote">
+        <div class="form-head">
+          <span>// cotação_rápida · ETM_QUOTE</span>
+          <span class="live">ABERTO</span>
+        </div>
+        <div class="field-grid">
+          <div class="field"><label>Origem (cidade/UF)</label><input type="text" name="origem" placeholder="Ex.: Contagem/MG" required></div>
+          <div class="field"><label>Destino (cidade/UF)</label><input type="text" name="destino" placeholder="Ex.: São Paulo/SP" required></div>
+          <div class="field"><label>Peso (kg)</label><input type="number" name="peso" placeholder="250" required></div>
+          <div class="field"><label>Volumes</label><input type="number" name="volumes" placeholder="3" required></div>
+          <div class="field full"><label>Valor da NF (R$)</label><input type="text" name="nf" placeholder="R$ 5.000,00"></div>
+          <div class="field full"><label>E-mail ou WhatsApp</label><input type="text" name="contato" placeholder="seu@email.com · (31) 9..." required></div>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Enviar cotação
+          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== SEGMENTOS ====================== -->
+<section class="section" id="segmentos">
+  <div class="section-head">
+    <div class="section-num">/06</div>
+    <h2>Segmentos <em>Atendidos</em></h2>
+    <div class="deck">Indústrias e empresas que confiam na precisão da ETMLOG.</div>
+  </div>
+
+  <div class="seg-grid">
+    <div class="seg">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V8l5-3 5 3v13M14 13h5v8"/></svg></div>
+      <div class="nm">Indústria</div>
+    </div>
+    <div class="seg">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/><path d="M3 4h2l3 12h10l3-8H6"/></svg></div>
+      <div class="nm">Comércio</div>
+    </div>
+    <div class="seg">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h18M5 7v12h14V7M9 11h6"/><circle cx="12" cy="4" r="1.5"/></svg></div>
+      <div class="nm">Autopeças</div>
+    </div>
+    <div class="seg">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M8 14h8"/></svg></div>
+      <div class="nm">E-commerce</div>
+    </div>
+    <div class="seg">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h6l2-3 2 6 2-3h6"/></svg></div>
+      <div class="nm">Distribuidores</div>
+    </div>
+    <div class="seg">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></div>
+      <div class="nm">Corporativo</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== TAGLINE ====================== -->
+<section class="section">
+  <div class="tagline-feature">
+    <div class="lbl">// pessoas · cultura · segurança</div>
+    <blockquote>
+      A logística nos conecta.<br>
+      <span style="color: var(--orange);">As pessoas nos unem.</span>
+    </blockquote>
+    <div class="cite">// segurança operacional · cuidado com pessoas · cultura ETMLOG</div>
+  </div>
+</section>
+
+<!-- ====================== CONTATO ====================== -->
+<section class="section" id="contato">
+  <div class="section-head">
+    <div class="section-num">/07</div>
+    <h2>Fale com a <em>ETMLOG</em></h2>
+    <div class="deck">Atendimento humano, próximo e em até 2h úteis.</div>
+  </div>
+
+  <div class="contact-grid">
+    <aside class="contact-info">
+      <h3>Atendimento corporativo.</h3>
+      <p class="deck">Estamos prontos para entender sua operação e propor a melhor solução logística.</p>
+      <ul class="contact-list">
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div>
+            <span class="cl-k">Telefone</span>
+            <span class="cl-v"><a href="tel:+553133623732">(31) 3362-3732</a></span>
+          </div>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+          <div>
+            <span class="cl-k">WhatsApp</span>
+            <span class="cl-v"><a href="https://wa.me/5531996198893" target="_blank" rel="noopener">(31) 99619-8893</a></span>
+          </div>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+          <div>
+            <span class="cl-k">E-mail</span>
+            <span class="cl-v"><a href="mailto:contato@etmlog.com.br">contato@etmlog.com.br</a></span>
+          </div>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div>
+            <span class="cl-k">Sede</span>
+            <span class="cl-v">Contagem · MG · Região Metropolitana de BH</span>
+          </div>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div>
+            <span class="cl-k">Horário</span>
+            <span class="cl-v">Seg–Sex · 08h às 18h · Atendimento corporativo</span>
+          </div>
+        </li>
+      </ul>
+    </aside>
+
+    <form class="contact-form" id="contactForm">
+      <h3>Envie sua mensagem</h3>
+      <p class="deck">Nossa equipe retorna em até 2h úteis.</p>
+      <div class="cf-grid">
+        <div class="cf-field"><label>Nome</label><input type="text" name="nome" required></div>
+        <div class="cf-field"><label>Empresa</label><input type="text" name="empresa"></div>
+        <div class="cf-field"><label>Telefone / WhatsApp</label><input type="text" name="telefone"></div>
+        <div class="cf-field"><label>E-mail</label><input type="email" name="email" required></div>
+        <div class="cf-field full">
+          <label>Tipo de serviço</label>
+          <select name="servico">
+            <option>Cargas consolidadas</option>
+            <option>Cargas complementares</option>
+            <option>Cargas fracionadas</option>
+            <option>Cargas aéreas</option>
+            <option>Just in Time industrial</option>
+            <option>Operação internacional (Mercosul)</option>
+            <option>Outro / dúvida geral</option>
+          </select>
+        </div>
+        <div class="cf-field full"><label>Mensagem</label><textarea name="mensagem" placeholder="Conte um pouco sobre sua operação..."></textarea></div>
+        <div class="cf-actions">
+          <button type="submit" class="btn btn-primary">
+            Enviar mensagem
+            <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </button>
+          <span class="info">// resposta em até 2h úteis</span>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ====================== FOOTER ====================== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img class="logo" src="assets/logo/etmlog-oficial-branco.svg" alt="ETMLOG · Logotipo institucional" />
+        <p class="desc">ETMLOG Logística e Transporte de Cargas. Há mais de 25 anos movendo a indústria brasileira com qualidade certificada e operação no Mercosul.</p>
+        <span class="iso">ISO 9001:2015 · Bureau Veritas</span>
+      </div>
+      <div>
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="paginas/sobre.html">Sobre a ETMLOG</a></li>
+          <li><a href="paginas/sobre.html#valores">Missão, Visão e Valores</a></li>
+          <li><a href="paginas/sobre.html#iso">Certificação ISO 9001</a></li>
+          <li><a href="paginas/contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Serviços</h5>
+        <ul>
+          <li><a href="paginas/servicos.html#consolidadas">Cargas Consolidadas</a></li>
+          <li><a href="paginas/servicos.html#fracionadas">Cargas Fracionadas</a></li>
+          <li><a href="paginas/servicos.html#aereas">Cargas Aéreas</a></li>
+          <li><a href="paginas/servicos.html#jit">Just in Time</a></li>
+          <li><a href="paginas/servicos.html#internacional">Mercosul</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Acesso</h5>
+        <ul>
+          <li><a href="paginas/cotacao.html">Solicitar cotação</a></li>
+          <li><a href="paginas/area-cliente.html">Área do Cliente</a></li>
+          <li><a href="https://wa.me/5531996198893" target="_blank" rel="noopener">WhatsApp · (31) 99619-8893</a></li>
+          <li><a href="tel:+553133623732">Telefone · (31) 3362-3732</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span class="sm">© ETMLOG · Logística e Transporte de Cargas · Grupo ETM · Contagem/MG</span>
+      <div class="social" aria-label="Redes sociais">
+        <a href="https://facebook.com/etmlogistica" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9V15h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.3V12h2.3l-.4 3h-1.9v6.9A10 10 0 0 0 22 12z"/></svg>
+        </a>
+        <a href="https://wa.me/5531996198893" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.1 4.9A10 10 0 0 0 2.5 17.4L1 23l5.8-1.5A10 10 0 1 0 19.1 4.9zM12 21.3a9 9 0 0 1-4.6-1.3l-.3-.2-3.4.9.9-3.3-.2-.3a9 9 0 1 1 7.6 4.2zm5.1-6.7c-.3-.2-1.6-.8-1.9-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.6.1-.8-.4-1.6-.9-2.3-1.6-.6-.5-1-1.2-1.4-1.8-.1-.2 0-.4.1-.6.2-.2.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.7 2 .9 2.8.9 3.7.8.6-.1 1.7-.7 2-1.3.2-.6.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4z"/></svg>
+        </a>
+        <a href="mailto:contato@etmlog.com.br" aria-label="E-mail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp flutuante -->
+<a href="https://wa.me/5531996198893" target="_blank" rel="noopener" class="wa-float" aria-label="Falar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.1 4.9A10 10 0 0 0 2.5 17.4L1 23l5.8-1.5A10 10 0 1 0 19.1 4.9zM12 21.3a9 9 0 0 1-4.6-1.3l-.3-.2-3.4.9.9-3.3-.2-.3a9 9 0 1 1 7.6 4.2zm5.1-6.7c-.3-.2-1.6-.8-1.9-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.6.1-.8-.4-1.6-.9-2.3-1.6-.6-.5-1-1.2-1.4-1.8-.1-.2 0-.4.1-.6.2-.2.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.7 2 .9 2.8.9 3.7.8.6-.1 1.7-.7 2-1.3.2-.6.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<script src="js/site.js" defer></script>
+</body>
+</html>
