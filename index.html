@@ -1151,6 +1151,116 @@ p{margin:0 0 16px;color:var(--text-soft)}
 }
 .services-section .service-card::after{color:var(--orange) !important;font-size:11px !important;top:18px !important;right:22px !important;font-weight:600;opacity:.85}
 
+
+/* === CARDS DE SERVIÇO UNIFORMES — todos do mesmo tamanho === */
+.services-bento{
+  display:grid !important;
+  grid-template-columns:repeat(3,1fr) !important;
+  gap:20px !important;
+}
+.services-bento > .svc-card{
+  grid-column:auto !important;
+  grid-row:auto !important;
+  min-height:420px !important;
+  display:flex;
+  flex-direction:column;
+}
+.svc-card .svc-content{padding:32px 32px 28px !important}
+.svc-content .svc-name{
+  font-size:1.85rem !important;
+  margin-bottom:10px !important;
+}
+.svc-content .svc-tagline{font-size:.98rem !important;margin-bottom:18px !important}
+.svc-content > p{font-size:.94rem !important;max-width:none !important}
+@media (max-width:1024px){
+  .services-bento{grid-template-columns:repeat(2,1fr) !important}
+}
+@media (max-width:680px){
+  .services-bento{grid-template-columns:1fr !important}
+  .services-bento > .svc-card{min-height:380px !important}
+  .svc-card .svc-content{padding:26px 24px 24px !important}
+  .svc-content .svc-name{font-size:1.6rem !important}
+}
+/* fim cards uniformes */
+
+/* === BOTÃO COMPARTILHAR DE SEÇÃO === */
+.section-share{
+  position:absolute;
+  top:22px;right:22px;
+  z-index:20;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.section-share__btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:42px;height:42px;
+  background:rgba(8,39,68,.06);
+  border:1px solid rgba(8,39,68,.12);
+  border-radius:50%;
+  color:var(--blue-deep);
+  cursor:pointer;
+  transition:all .25s var(--ease);
+}
+.section-share__btn:hover{
+  background:var(--orange);
+  border-color:var(--orange);
+  color:#fff;
+  transform:scale(1.08);
+}
+.section-share__btn svg{width:18px;height:18px}
+.section-share__menu{
+  position:absolute;
+  top:calc(100% + 8px);right:0;
+  background:#fff;
+  border:1px solid rgba(8,39,68,.08);
+  border-radius:12px;
+  box-shadow:0 18px 42px -16px rgba(8,39,68,.28);
+  padding:6px;
+  min-width:200px;
+  opacity:0;visibility:hidden;
+  transform:translateY(-6px);
+  transition:opacity .2s,transform .2s,visibility .2s;
+}
+.section-share.is-open .section-share__menu{
+  opacity:1;visibility:visible;transform:translateY(0);
+}
+.section-share__item{
+  display:flex;align-items:center;gap:12px;
+  padding:10px 14px;
+  border-radius:8px;
+  font-family:var(--font-sans,Inter,sans-serif);
+  font-size:.88rem;font-weight:500;
+  color:var(--blue-deep);
+  text-decoration:none;
+  cursor:pointer;
+  background:none;border:none;
+  width:100%;text-align:left;
+  transition:background .2s,color .2s;
+}
+.section-share__item:hover{background:rgba(242,117,7,.08);color:var(--orange)}
+.section-share__item svg{width:18px;height:18px;flex-shrink:0}
+.section-share__item.copied{color:#16a34a}
+/* Variante dark (pra seções com fundo escuro) */
+.section-share.is-dark .section-share__btn{
+  background:rgba(255,255,255,.08);
+  border-color:rgba(255,255,255,.14);
+  color:#fff;
+}
+.section-share.is-dark .section-share__btn:hover{
+  background:var(--orange);border-color:var(--orange);
+}
+@media (max-width:680px){
+  .section-share{top:14px;right:14px}
+  .section-share__btn{width:38px;height:38px}
+}
+/* fim botão compartilhar */
+
+/* Garantir que seções com share button tenham position relative */
+.page-hero{position:relative !important}
+
+
+
 /* SKINS ÚNICAS — cada card com decoração e variação distinta */
 .services-grid .service-card:nth-child(1){
   background:linear-gradient(160deg,#0E3559 0%,#082744 100%);
@@ -1360,6 +1470,41 @@ p{margin:0 0 16px;color:var(--text-soft)}
 }
 .svc-card.svc-hero .svc-content p{font-size:1rem;max-width:480px}
 .svc-card.svc-feature .svc-content p{font-size:.98rem;max-width:680px}
+
+/* === NOME DO SERVIÇO em destaque (protagonista do card) === */
+.svc-content .svc-name{
+  color:#fff;
+  font-size:2.1rem;
+  font-weight:700;
+  letter-spacing:-.025em;
+  line-height:1.08;
+  margin:0 0 10px;
+}
+.svc-card.svc-hero .svc-content .svc-name{font-size:2.7rem;margin-bottom:14px}
+.svc-card.svc-feature .svc-content .svc-name{font-size:2.4rem;margin-bottom:12px}
+.svc-card.svc-wide .svc-content .svc-name{font-size:2.3rem;margin-bottom:12px}
+
+.svc-content .svc-tagline{
+  color:var(--orange-soft);
+  font-size:.98rem;
+  font-weight:500;
+  font-style:italic;
+  letter-spacing:.005em;
+  line-height:1.4;
+  margin:0 0 18px;
+  opacity:.92;
+}
+.svc-card.svc-hero .svc-content .svc-tagline{font-size:1.1rem;margin-bottom:20px}
+.svc-card.svc-feature .svc-content .svc-tagline{font-size:1.04rem;margin-bottom:18px}
+
+@media (max-width:768px){
+  .svc-content .svc-name{font-size:1.7rem}
+  .svc-card.svc-hero .svc-content .svc-name{font-size:1.9rem}
+  .svc-card.svc-feature .svc-content .svc-name{font-size:1.8rem}
+  .svc-content .svc-tagline{font-size:.92rem}
+}
+/* fim NOME DO SERVIÇO */
+
 
 .svc-micro{
   font-family:var(--font-mono);font-size:10.5px;
@@ -1711,7 +1856,7 @@ p{margin:0 0 16px;color:var(--text-soft)}
     </div>
 
     <span class="lang-switch" aria-label="Alternar idioma">
-      <a href="etmlog.html" class="is-active" hreflang="pt-BR" aria-current="true">PT</a>
+      <a href="index.html" class="is-active" hreflang="pt-BR" aria-current="true">PT</a>
       <span class="sep">·</span>
       <a href="etmlog-es.html" hreflang="es-UY">ES</a>
     </span>
@@ -1939,6 +2084,26 @@ p{margin:0 0 16px;color:var(--text-soft)}
 
 <!-- ====================== SOBRE ====================== -->
 <section class="page-hero" id="sobre">
+  <div class="section-share" data-section="sobre" data-title="Sobre a ETMLOG">
+  <button class="section-share__btn" type="button" aria-label="Compartilhar seção" onclick="toggleShare(this)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+  </button>
+  <div class="section-share__menu" role="menu">
+    <button class="section-share__item" type="button" onclick="shareTo('whatsapp', this)">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.45A11.79 11.79 0 0 0 12 0a11.92 11.92 0 0 0-10.06 18.13L0 24l6.05-1.93A11.92 11.92 0 0 0 24 12a11.79 11.79 0 0 0-3.48-8.55zM12 21.81A9.84 9.84 0 0 1 7 20.44l-.36-.22-3.59 1.14 1.18-3.49-.23-.36A9.85 9.85 0 1 1 12 21.81zm5.4-7.35c-.3-.15-1.76-.87-2-1s-.47-.15-.67.15-.77 1-.94 1.18-.35.18-.65 0a8.1 8.1 0 0 1-2.39-1.47 9.13 9.13 0 0 1-1.66-2.06c-.17-.3 0-.47.13-.62s.3-.35.44-.52a2 2 0 0 0 .3-.5.55.55 0 0 0 0-.52c-.07-.15-.66-1.6-.91-2.18s-.48-.5-.66-.5h-.56a1.06 1.06 0 0 0-.78.37 3.27 3.27 0 0 0-1 2.43 5.69 5.69 0 0 0 1.19 3 13 13 0 0 0 5 4.39 16.42 16.42 0 0 0 1.66.61 4 4 0 0 0 1.85.12 3 3 0 0 0 2-1.4 2.46 2.46 0 0 0 .17-1.4c-.07-.12-.27-.2-.57-.35z"/></svg>
+      WhatsApp
+    </button>
+    <button class="section-share__item" type="button" onclick="shareTo('linkedin', this)">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zM8 19H5V8h3zM6.5 6.7a1.8 1.8 0 1 1 1.8-1.8 1.8 1.8 0 0 1-1.8 1.8zM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5z"/></svg>
+      LinkedIn
+    </button>
+    <button class="section-share__item" type="button" onclick="shareTo('copy', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span class="share-label">Copiar link</span>
+    </button>
+  </div>
+</div>
+
   <div class="container">
     <div class="crumbs">// sobre a etmlog</div>
     <h1>Uma empresa de transporte feita para acompanhar resultados.</h1>
@@ -2017,6 +2182,26 @@ p{margin:0 0 16px;color:var(--text-soft)}
 
 <!-- ====================== SERVIÇOS ====================== -->
 <section class="page-hero page-hero--services" id="servicos">
+  <div class="section-share is-dark" data-section="servicos" data-title="Portfólio de Serviços">
+  <button class="section-share__btn" type="button" aria-label="Compartilhar seção" onclick="toggleShare(this)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+  </button>
+  <div class="section-share__menu" role="menu">
+    <button class="section-share__item" type="button" onclick="shareTo('whatsapp', this)">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.45A11.79 11.79 0 0 0 12 0a11.92 11.92 0 0 0-10.06 18.13L0 24l6.05-1.93A11.92 11.92 0 0 0 24 12a11.79 11.79 0 0 0-3.48-8.55zM12 21.81A9.84 9.84 0 0 1 7 20.44l-.36-.22-3.59 1.14 1.18-3.49-.23-.36A9.85 9.85 0 1 1 12 21.81zm5.4-7.35c-.3-.15-1.76-.87-2-1s-.47-.15-.67.15-.77 1-.94 1.18-.35.18-.65 0a8.1 8.1 0 0 1-2.39-1.47 9.13 9.13 0 0 1-1.66-2.06c-.17-.3 0-.47.13-.62s.3-.35.44-.52a2 2 0 0 0 .3-.5.55.55 0 0 0 0-.52c-.07-.15-.66-1.6-.91-2.18s-.48-.5-.66-.5h-.56a1.06 1.06 0 0 0-.78.37 3.27 3.27 0 0 0-1 2.43 5.69 5.69 0 0 0 1.19 3 13 13 0 0 0 5 4.39 16.42 16.42 0 0 0 1.66.61 4 4 0 0 0 1.85.12 3 3 0 0 0 2-1.4 2.46 2.46 0 0 0 .17-1.4c-.07-.12-.27-.2-.57-.35z"/></svg>
+      WhatsApp
+    </button>
+    <button class="section-share__item" type="button" onclick="shareTo('linkedin', this)">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zM8 19H5V8h3zM6.5 6.7a1.8 1.8 0 1 1 1.8-1.8 1.8 1.8 0 0 1-1.8 1.8zM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5z"/></svg>
+      LinkedIn
+    </button>
+    <button class="section-share__item" type="button" onclick="shareTo('copy', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span class="share-label">Copiar link</span>
+    </button>
+  </div>
+</div>
+
   <div class="container">
     <div class="crumbs">// serviços</div>
     <h1>Estrutura para <span class="hl">diferentes</span> perfis de operação.</h1>
@@ -2036,7 +2221,7 @@ p{margin:0 0 16px;color:var(--text-soft)}
     <div class="services-bento">
 
       <!-- ───── 01 · HERO · Rodoviário Dedicado ───── -->
-      <article class="svc-card svc-hero" data-skin="route">
+      <article class="svc-card" data-skin="route">
         <svg class="svc-skin" viewBox="0 0 600 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <defs>
             <linearGradient id="rt-line" x1="0" y1="0" x2="1" y2="0">
@@ -2062,7 +2247,8 @@ p{margin:0 0 16px;color:var(--text-soft)}
             <span class="svc-label">// rodoviário · dedicado</span>
             <span class="svc-status"><span class="dot"></span>rota exclusiva</span>
           </header>
-          <h3>Exclusividade do embarque à entrega.</h3>
+          <h2 class="svc-name">Rodoviário Dedicado</h2>
+          <p class="svc-tagline">Exclusividade do embarque à entrega.</p>
           <p>Veículo exclusivo, rota direta e atenção total à sua carga. Cada operação é tratada como única — com acompanhamento próximo do início ao destino.</p>
           <div class="svc-micro">// origem → destino · sem desvios · sem paradas extras</div>
           <div class="svc-foot">
@@ -2093,7 +2279,8 @@ p{margin:0 0 16px;color:var(--text-soft)}
             <span class="svc-label">// rodoviário · fracionado</span>
             <span class="svc-status alt"><span class="dot"></span>otimizado</span>
           </header>
-          <h3>Inteligência para transportar melhor.</h3>
+          <h2 class="svc-name">Rodoviário Fracionado</h2>
+          <p class="svc-tagline">Inteligência para transportar melhor.</p>
           <p>Cargas menores movidas com aproveitamento logístico real e custo proporcional ao espaço utilizado.</p>
           <div class="svc-foot">
             <a href="https://wa.me/5511911429001?text=Ol%C3%A1%2C%20gostaria%20de%20cotar%20uma%20carga%20Rodovi%C3%A1ria%20Fracionada%20com%20a%20ETMLOG." class="svc-cta" target="_blank" rel="noopener">Cotar fracionada <span class="arrow">→</span></a>
@@ -2124,7 +2311,8 @@ p{margin:0 0 16px;color:var(--text-soft)}
             <span class="svc-label">// rodoviário · dedicado especial</span>
             <span class="svc-status alt"><span class="dot"></span>cuidado técnico</span>
           </header>
-          <h3>Cuidado técnico para cargas sensíveis.</h3>
+          <h2 class="svc-name">Rodoviário Dedicado Especial</h2>
+          <p class="svc-tagline">Cuidado técnico para cargas sensíveis.</p>
           <p>Manuseio criterioso, embalagem específica e rota planejada para proteger o que exige mais atenção.</p>
           <div class="svc-foot">
             <a href="https://wa.me/5511911429001?text=Ol%C3%A1%2C%20preciso%20planejar%20uma%20opera%C3%A7%C3%A3o%20Rodovi%C3%A1ria%20Dedicada%20Especial%20com%20a%20ETMLOG." class="svc-cta" target="_blank" rel="noopener">Planejar operação <span class="arrow">→</span></a>
@@ -2155,7 +2343,8 @@ p{margin:0 0 16px;color:var(--text-soft)}
             <span class="svc-label">// rodoviário · dedicado urgente</span>
             <span class="svc-status urgent"><span class="dot"></span>prioridade</span>
           </header>
-          <h3>Quando o prazo move a operação.</h3>
+          <h2 class="svc-name">Rodoviário Dedicado Urgente</h2>
+          <p class="svc-tagline">Quando o prazo move a operação.</p>
           <p>Resposta rápida, prioridade na malha e acompanhamento direto até a entrega. Compromisso com o tempo crítico da indústria.</p>
           <div class="svc-foot">
             <a href="https://wa.me/5511911429001?text=Ol%C3%A1%2C%20preciso%20de%20um%20frete%20Rodovi%C3%A1rio%20Dedicado%20Urgente%20com%20a%20ETMLOG." class="svc-cta" target="_blank" rel="noopener">Acionar urgente <span class="arrow">→</span></a>
@@ -2189,7 +2378,8 @@ p{margin:0 0 16px;color:var(--text-soft)}
             <span class="svc-label">// aéreo · com retirada</span>
             <span class="svc-status alt"><span class="dot"></span>integrado</span>
           </header>
-          <h3>Mais velocidade desde a coleta.</h3>
+          <h2 class="svc-name">Aéreo com Retirada</h2>
+          <p class="svc-tagline">Mais velocidade desde a coleta.</p>
           <p>Coletamos, conectamos e embarcamos com precisão — eliminando intermediários entre o terrestre e o aéreo.</p>
           <div class="svc-foot">
             <a href="https://wa.me/5511911429001?text=Ol%C3%A1%2C%20gostaria%20de%20cotar%20um%20frete%20A%C3%A9reo%20com%20Retirada%20com%20a%20ETMLOG." class="svc-cta" target="_blank" rel="noopener">Cotar aéreo + coleta <span class="arrow">→</span></a>
@@ -2199,7 +2389,7 @@ p{margin:0 0 16px;color:var(--text-soft)}
       </article>
 
       <!-- ───── 06 · Aéreo Domiciliar ───── -->
-      <article class="svc-card svc-wide" data-skin="map">
+      <article class="svc-card" data-skin="map">
         <svg class="svc-skin" viewBox="0 0 460 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <!-- Brasil silhueta abstrata -->
           <path d="M280,30 Q320,28 350,50 Q375,80 380,120 Q378,160 360,185 Q330,205 295,200 Q265,192 250,170 Q235,150 240,120 Q245,90 260,60 Q272,38 280,30 Z" fill="none" stroke="rgba(62,165,240,.32)" stroke-width="1.2"/>
@@ -2219,7 +2409,8 @@ p{margin:0 0 16px;color:var(--text-soft)}
             <span class="svc-label">// aéreo · domiciliar</span>
             <span class="svc-status"><span class="dot"></span>alcance nacional</span>
           </header>
-          <h3>Do Brasil à sua porta.</h3>
+          <h2 class="svc-name">Aéreo Domiciliar</h2>
+          <p class="svc-tagline">Do Brasil à sua porta.</p>
           <p>Cobertura aérea com entrega domiciliar para destinos em todo o território — agilidade, segurança e rastreabilidade do início ao fim.</p>
           <div class="svc-micro">// origem aérea · transbordo · entrega final no endereço</div>
           <div class="svc-foot">
@@ -2230,7 +2421,7 @@ p{margin:0 0 16px;color:var(--text-soft)}
       </article>
 
       <!-- ───── 07 · Carga e Descarga com Equipamentos Especiais ───── -->
-      <article class="svc-card svc-feature" data-skin="crane">
+      <article class="svc-card" data-skin="crane">
         <svg class="svc-skin" viewBox="0 0 900 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <!-- Faixas de segurança no chão -->
           <pattern id="hazard" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
@@ -2264,7 +2455,8 @@ p{margin:0 0 16px;color:var(--text-soft)}
             <span class="svc-label">// carga e descarga · equipamentos especiais</span>
             <span class="svc-status alt"><span class="dot"></span>operação assistida</span>
           </header>
-          <h3>Estrutura técnica para movimentações críticas.</h3>
+          <h2 class="svc-name">Equipamentos Especiais</h2>
+          <p class="svc-tagline">Estrutura técnica para movimentações críticas.</p>
           <p>Munck, guindastes, escolta, batedores e monitoramento — para operações que exigem força, planejamento e execução controlada do início ao fim.</p>
           <div class="svc-foot">
             <a href="https://wa.me/5511911429001?text=Ol%C3%A1%2C%20preciso%20projetar%20uma%20opera%C3%A7%C3%A3o%20de%20Carga%20e%20Descarga%20com%20Equipamentos%20Especiais%20com%20a%20ETMLOG." class="svc-cta" target="_blank" rel="noopener">Projetar operação <span class="arrow">→</span></a>
@@ -2279,6 +2471,26 @@ p{margin:0 0 16px;color:var(--text-soft)}
 
 <!-- ====================== DIFERENCIAIS ====================== -->
 <section class="page-hero page-hero--diff" id="diferenciais">
+  <div class="section-share" data-section="diferenciais" data-title="Diferenciais ETMLOG">
+  <button class="section-share__btn" type="button" aria-label="Compartilhar seção" onclick="toggleShare(this)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+  </button>
+  <div class="section-share__menu" role="menu">
+    <button class="section-share__item" type="button" onclick="shareTo('whatsapp', this)">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.45A11.79 11.79 0 0 0 12 0a11.92 11.92 0 0 0-10.06 18.13L0 24l6.05-1.93A11.92 11.92 0 0 0 24 12a11.79 11.79 0 0 0-3.48-8.55zM12 21.81A9.84 9.84 0 0 1 7 20.44l-.36-.22-3.59 1.14 1.18-3.49-.23-.36A9.85 9.85 0 1 1 12 21.81zm5.4-7.35c-.3-.15-1.76-.87-2-1s-.47-.15-.67.15-.77 1-.94 1.18-.35.18-.65 0a8.1 8.1 0 0 1-2.39-1.47 9.13 9.13 0 0 1-1.66-2.06c-.17-.3 0-.47.13-.62s.3-.35.44-.52a2 2 0 0 0 .3-.5.55.55 0 0 0 0-.52c-.07-.15-.66-1.6-.91-2.18s-.48-.5-.66-.5h-.56a1.06 1.06 0 0 0-.78.37 3.27 3.27 0 0 0-1 2.43 5.69 5.69 0 0 0 1.19 3 13 13 0 0 0 5 4.39 16.42 16.42 0 0 0 1.66.61 4 4 0 0 0 1.85.12 3 3 0 0 0 2-1.4 2.46 2.46 0 0 0 .17-1.4c-.07-.12-.27-.2-.57-.35z"/></svg>
+      WhatsApp
+    </button>
+    <button class="section-share__item" type="button" onclick="shareTo('linkedin', this)">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zM8 19H5V8h3zM6.5 6.7a1.8 1.8 0 1 1 1.8-1.8 1.8 1.8 0 0 1-1.8 1.8zM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5z"/></svg>
+      LinkedIn
+    </button>
+    <button class="section-share__item" type="button" onclick="shareTo('copy', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span class="share-label">Copiar link</span>
+    </button>
+  </div>
+</div>
+
   <div class="container">
     <div class="crumbs">// diferenciais</div>
     <h1>O diferencial está em <span class="hl">como cada operação</span> é conduzida.</h1>
@@ -2431,6 +2643,26 @@ p{margin:0 0 16px;color:var(--text-soft)}
 
 <!-- ====================== CONTATO ====================== -->
 <section class="page-hero" id="contato">
+  <div class="section-share" data-section="contato" data-title="Fale com a ETMLOG">
+  <button class="section-share__btn" type="button" aria-label="Compartilhar seção" onclick="toggleShare(this)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+  </button>
+  <div class="section-share__menu" role="menu">
+    <button class="section-share__item" type="button" onclick="shareTo('whatsapp', this)">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.45A11.79 11.79 0 0 0 12 0a11.92 11.92 0 0 0-10.06 18.13L0 24l6.05-1.93A11.92 11.92 0 0 0 24 12a11.79 11.79 0 0 0-3.48-8.55zM12 21.81A9.84 9.84 0 0 1 7 20.44l-.36-.22-3.59 1.14 1.18-3.49-.23-.36A9.85 9.85 0 1 1 12 21.81zm5.4-7.35c-.3-.15-1.76-.87-2-1s-.47-.15-.67.15-.77 1-.94 1.18-.35.18-.65 0a8.1 8.1 0 0 1-2.39-1.47 9.13 9.13 0 0 1-1.66-2.06c-.17-.3 0-.47.13-.62s.3-.35.44-.52a2 2 0 0 0 .3-.5.55.55 0 0 0 0-.52c-.07-.15-.66-1.6-.91-2.18s-.48-.5-.66-.5h-.56a1.06 1.06 0 0 0-.78.37 3.27 3.27 0 0 0-1 2.43 5.69 5.69 0 0 0 1.19 3 13 13 0 0 0 5 4.39 16.42 16.42 0 0 0 1.66.61 4 4 0 0 0 1.85.12 3 3 0 0 0 2-1.4 2.46 2.46 0 0 0 .17-1.4c-.07-.12-.27-.2-.57-.35z"/></svg>
+      WhatsApp
+    </button>
+    <button class="section-share__item" type="button" onclick="shareTo('linkedin', this)">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zM8 19H5V8h3zM6.5 6.7a1.8 1.8 0 1 1 1.8-1.8 1.8 1.8 0 0 1-1.8 1.8zM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5z"/></svg>
+      LinkedIn
+    </button>
+    <button class="section-share__item" type="button" onclick="shareTo('copy', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span class="share-label">Copiar link</span>
+    </button>
+  </div>
+</div>
+
   <div class="container">
     <div class="crumbs">// fale com a etmlog</div>
     <h1>Solicite cotação ou conte para a gente sobre sua operação.</h1>
@@ -2807,5 +3039,58 @@ p{margin:0 0 16px;color:var(--text-soft)}
   }
 })();
 </script>
+
+<script>
+// Botão de compartilhar por seção
+function toggleShare(btn){
+  const wrapper = btn.closest('.section-share');
+  // Fecha outros menus abertos
+  document.querySelectorAll('.section-share.is-open').forEach(el => {
+    if(el !== wrapper) el.classList.remove('is-open');
+  });
+  wrapper.classList.toggle('is-open');
+}
+function shareTo(plat, btn){
+  const wrapper = btn.closest('.section-share');
+  const secao = wrapper.dataset.section;
+  const titulo = wrapper.dataset.title || document.title;
+  const url = window.location.origin + window.location.pathname + '#' + secao;
+  const texto = encodeURIComponent(`${titulo} — ETMLOG`);
+  const urlEnc = encodeURIComponent(url);
+  
+  if(plat === 'whatsapp'){
+    window.open(`https://wa.me/?text=${texto}%20${urlEnc}`, '_blank', 'noopener');
+  } else if(plat === 'linkedin'){
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${urlEnc}`, '_blank', 'noopener');
+  } else if(plat === 'copy'){
+    navigator.clipboard.writeText(url).then(() => {
+      const label = btn.querySelector('.share-label');
+      const original = label.textContent;
+      btn.classList.add('copied');
+      label.textContent = '✓ Copiado!';
+      setTimeout(() => {
+        label.textContent = original;
+        btn.classList.remove('copied');
+        wrapper.classList.remove('is-open');
+      }, 1400);
+      return;
+    });
+  }
+  setTimeout(() => wrapper.classList.remove('is-open'), 250);
+}
+// Fecha menu ao clicar fora
+document.addEventListener('click', e => {
+  if(!e.target.closest('.section-share')){
+    document.querySelectorAll('.section-share.is-open').forEach(el => el.classList.remove('is-open'));
+  }
+});
+// ESC fecha menu
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape'){
+    document.querySelectorAll('.section-share.is-open').forEach(el => el.classList.remove('is-open'));
+  }
+});
+</script>
+
 </body>
 </html>
