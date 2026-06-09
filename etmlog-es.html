@@ -511,7 +511,6 @@ p{margin:0 0 16px;color:var(--text-soft)}
   transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .reveal.is-visible{opacity:1;transform:translateY(0)}
 
-
 /* ====================== HERO · CARROSSEL DE CLIENTES (dark) ====================== */
 .hero-clients{
   margin-top:48px;
@@ -958,7 +957,6 @@ p{margin:0 0 16px;color:var(--text-soft)}
 .is-scrolled .lang-switch a:hover,.is-scrolled .lang-switch a.is-active{color:#082744}
 @media (max-width:860px){.lang-switch{margin-right:8px;font-size:.68rem}}
 
-
 /* === Service card: novos elementos (lead/support/cta) === */
 .service-card{display:flex;flex-direction:column}
 .service-card h3{font-size:1.05rem;color:var(--blue-deep);margin-bottom:14px;line-height:1.3;font-weight:600}
@@ -968,8 +966,6 @@ p{margin:0 0 16px;color:var(--text-soft)}
 .service-card .card-cta svg{width:14px;height:14px;transition:transform .25s var(--ease)}
 .service-card .card-cta:hover{color:var(--blue-primary)}
 .service-card .card-cta:hover svg{transform:translateX(4px)}
-
-
 
 /* ============================================================
    SERVICES SECTION · fundo dark + grid técnico + laranja
@@ -1122,7 +1118,6 @@ p{margin:0 0 16px;color:var(--text-soft)}
   .services-grid .service-card > .ico{width:54px;height:54px;margin-bottom:22px}
 }
 
-
 /* Adapta tipografia dos cards para o novo fundo dark */
 .services-section .service-card > h3{color:#fff !important;font-size:1.18rem !important;margin-bottom:10px !important;letter-spacing:-.018em}
 .services-section .service-card > .label{color:var(--orange-soft) !important;font-size:10px !important;letter-spacing:.18em;margin-bottom:10px !important}
@@ -1150,7 +1145,6 @@ p{margin:0 0 16px;color:var(--text-soft)}
   background:var(--orange) !important;color:#fff !important;border-color:var(--orange) !important;
 }
 .services-section .service-card::after{color:var(--orange) !important;font-size:11px !important;top:18px !important;right:22px !important;font-weight:600;opacity:.85}
-
 
 /* === CARDS DE Servicio UNIFORMES — todos do mesmo tamanho === */
 .services-bento{
@@ -1183,83 +1177,10 @@ p{margin:0 0 16px;color:var(--text-soft)}
 }
 /* fim cards uniformes */
 
-/* === BOTÃO COMPARTILHAR DE SEÇÃO === */
-.section-share{
-  position:absolute;
-  top:22px;right:22px;
-  z-index:20;
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-}
-.section-share__btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  width:42px;height:42px;
-  background:rgba(8,39,68,.06);
-  border:1px solid rgba(8,39,68,.12);
-  border-radius:50%;
-  color:var(--blue-deep);
-  cursor:pointer;
-  transition:all .25s var(--ease);
-}
-.section-share__btn:hover{
-  background:var(--orange);
-  border-color:var(--orange);
-  color:#fff;
-  transform:scale(1.08);
-}
-.section-share__btn svg{width:18px;height:18px}
-.section-share__menu{
-  position:absolute;
-  top:calc(100% + 8px);right:0;
-  background:#fff;
-  border:1px solid rgba(8,39,68,.08);
-  border-radius:12px;
-  box-shadow:0 18px 42px -16px rgba(8,39,68,.28);
-  padding:6px;
-  min-width:200px;
-  opacity:0;visibility:hidden;
-  transform:translateY(-6px);
-  transition:opacity .2s,transform .2s,visibility .2s;
-}
-.section-share.is-open .section-share__menu{
-  opacity:1;visibility:visible;transform:translateY(0);
-}
-.section-share__item{
-  display:flex;align-items:center;gap:12px;
-  padding:10px 14px;
-  border-radius:8px;
-  font-family:var(--font-sans,Inter,sans-serif);
-  font-size:.88rem;font-weight:500;
-  color:var(--blue-deep);
-  text-decoration:none;
-  cursor:pointer;
-  background:none;border:none;
-  width:100%;text-align:left;
-  transition:background .2s,color .2s;
-}
-.section-share__item:hover{background:rgba(242,117,7,.08);color:var(--orange)}
-.section-share__item svg{width:18px;height:18px;flex-shrink:0}
-.section-share__item.copied{color:#16a34a}
-/* Variante dark (pra seções com fundo escuro) */
-.section-share.is-dark .section-share__btn{
-  background:rgba(255,255,255,.08);
-  border-color:rgba(255,255,255,.14);
-  color:#fff;
-}
-.section-share.is-dark .section-share__btn:hover{
-  background:var(--orange);border-color:var(--orange);
-}
-@media (max-width:680px){
-  .section-share{top:14px;right:14px}
-  .section-share__btn{width:38px;height:38px}
-}
-/* fim botão compartilhar */
+/* (botão de compartilhar movido para flutuante fixo) */
 
 /* Garantir que seções com share button tenham position relative */
 .page-hero{position:relative !important}
-
-
 
 /* SKINS ÚNICAS — cada card com decoração e variação distinta */
 .services-grid .service-card:nth-child(1){
@@ -1332,8 +1253,6 @@ p{margin:0 0 16px;color:var(--text-soft)}
 @media (max-width:680px){
   .services-grid{grid-template-columns:1fr}
 }
-
-
 
 /* ============================================================
    SERVICES · Bento + Skins SVG dedicadas (redesign 2026)
@@ -1505,7 +1424,6 @@ p{margin:0 0 16px;color:var(--text-soft)}
 }
 /* fim NOME DO Servicio */
 
-
 .svc-micro{
   font-family:var(--font-mono);font-size:10.5px;
   letter-spacing:.1em;color:rgba(62,165,240,.65);
@@ -1571,7 +1489,6 @@ p{margin:0 0 16px;color:var(--text-soft)}
   .svc-card.svc-feature .svc-content{padding:28px 24px 24px}
 }
 
-
 /* SKINS — opacidade menor + máscara mais agressiva para não brigar com texto */
 .svc-skin{
   opacity:.42 !important;
@@ -1593,7 +1510,6 @@ p{margin:0 0 16px;color:var(--text-soft)}
 .svc-hero .svc-content,.svc-feature .svc-content{
   background:linear-gradient(180deg,transparent 0%,rgba(8,39,68,.4) 30%,rgba(8,39,68,.75) 100%);
 }
-
 
 /* ============================================================
    Diferenciales · grid uniforme 4×2 + skins temáticas
@@ -1810,6 +1726,108 @@ p{margin:0 0 16px;color:var(--text-soft)}
   .diff-section{padding:60px 0 80px}
 }
 
+
+/* === BOTÃO COMPARTILHAR FLUTUANTE (FAB) === */
+.share-fab{
+  position:fixed;
+  bottom:24px;
+  left:24px;
+  z-index:90;
+  display:inline-flex;
+  align-items:center;
+  font-family:var(--font-mono,'JetBrains Mono',monospace);
+}
+.share-fab__btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 20px 14px 16px;
+  background:linear-gradient(135deg,#082744 0%,#0E3559 100%);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;
+  font-size:11.5px;
+  font-weight:600;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  cursor:pointer;
+  box-shadow:0 10px 28px -8px rgba(8,39,68,.5),0 2px 6px rgba(0,0,0,.18);
+  transition:all .28s cubic-bezier(.2,.7,.3,1);
+}
+.share-fab__btn:hover{
+  background:linear-gradient(135deg,#F27507 0%,#FF8E2E 100%);
+  border-color:#F27507;
+  transform:translateY(-2px) scale(1.02);
+  box-shadow:0 14px 32px -8px rgba(242,117,7,.5);
+}
+.share-fab__btn svg{width:18px;height:18px;flex-shrink:0}
+.share-fab__section{
+  display:inline-block;
+  margin-left:6px;
+  padding:2px 8px;
+  background:rgba(242,117,7,.22);
+  color:#FFB46D;
+  border-radius:999px;
+  font-size:9.5px;
+  letter-spacing:.14em;
+  font-weight:600;
+}
+.share-fab__btn:hover .share-fab__section{
+  background:rgba(255,255,255,.2);
+  color:#fff;
+}
+.share-fab__menu{
+  position:absolute;
+  bottom:calc(100% + 12px);
+  left:0;
+  background:#fff;
+  border:1px solid rgba(8,39,68,.08);
+  border-radius:14px;
+  box-shadow:0 22px 50px -16px rgba(8,39,68,.35);
+  padding:8px;
+  min-width:240px;
+  opacity:0;visibility:hidden;
+  transform:translateY(8px);
+  transition:opacity .22s,transform .22s,visibility .22s;
+}
+.share-fab.is-open .share-fab__menu{
+  opacity:1;visibility:visible;transform:translateY(0);
+}
+.share-fab__item{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 16px;
+  border-radius:10px;
+  font-family:Inter,system-ui,sans-serif;
+  font-size:.92rem;font-weight:500;
+  color:#082744;
+  text-decoration:none;
+  cursor:pointer;
+  background:none;border:none;
+  width:100%;text-align:left;
+  transition:background .2s,color .2s,transform .15s;
+}
+.share-fab__item:hover{background:rgba(242,117,7,.1);color:#F27507;transform:translateX(2px)}
+.share-fab__item svg{width:18px;height:18px;flex-shrink:0}
+.share-fab__item.copied{color:#16a34a}
+.share-fab__divider{
+  height:1px;
+  background:rgba(8,39,68,.08);
+  margin:6px 8px;
+}
+.share-fab__hint{
+  padding:8px 16px;
+  font-family:var(--font-mono,'JetBrains Mono',monospace);
+  font-size:9.5px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#6b7a8a;
+}
+@media (max-width:680px){
+  .share-fab{bottom:18px;left:18px}
+  .share-fab__btn{padding:12px 14px 12px 12px;font-size:10.5px}
+  .share-fab__section{display:none}
+  .share-fab__menu{min-width:220px}
+}
+/* fim FAB compartilhar */
+
 </style>
 </head>
 <body>
@@ -1951,7 +1969,6 @@ p{margin:0 0 16px;color:var(--text-soft)}
               <circle class="city" cx="272.9" cy="442.3" r="3" style="animation-delay:3.67s"/>
               <circle class="city-uy" cx="235.2" cy="529.2" r="3" style="animation-delay:3.74s"/>
 
-
               <line class="conn c-ur" x1="322" y1="308" x2="248" y2="498"/>
               <circle class="city city-uruguai" cx="248" cy="498" r="3"/>
 
@@ -2084,25 +2101,6 @@ p{margin:0 0 16px;color:var(--text-soft)}
 
 <!-- ====================== Acerca ====================== -->
 <section class="page-hero" id="Acerca">
-  <div class="section-share" data-section="Acerca" data-title="Acerca de ETMLOG">
-  <button class="section-share__btn" type="button" aria-label="Compartir sección" onclick="toggleShare(this)">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-  </button>
-  <div class="section-share__menu" role="menu">
-    <button class="section-share__item" type="button" onclick="shareTo('whatsapp', this)">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.45A11.79 11.79 0 0 0 12 0a11.92 11.92 0 0 0-10.06 18.13L0 24l6.05-1.93A11.92 11.92 0 0 0 24 12a11.79 11.79 0 0 0-3.48-8.55zM12 21.81A9.84 9.84 0 0 1 7 20.44l-.36-.22-3.59 1.14 1.18-3.49-.23-.36A9.85 9.85 0 1 1 12 21.81zm5.4-7.35c-.3-.15-1.76-.87-2-1s-.47-.15-.67.15-.77 1-.94 1.18-.35.18-.65 0a8.1 8.1 0 0 1-2.39-1.47 9.13 9.13 0 0 1-1.66-2.06c-.17-.3 0-.47.13-.62s.3-.35.44-.52a2 2 0 0 0 .3-.5.55.55 0 0 0 0-.52c-.07-.15-.66-1.6-.91-2.18s-.48-.5-.66-.5h-.56a1.06 1.06 0 0 0-.78.37 3.27 3.27 0 0 0-1 2.43 5.69 5.69 0 0 0 1.19 3 13 13 0 0 0 5 4.39 16.42 16.42 0 0 0 1.66.61 4 4 0 0 0 1.85.12 3 3 0 0 0 2-1.4 2.46 2.46 0 0 0 .17-1.4c-.07-.12-.27-.2-.57-.35z"/></svg>
-      WhatsApp
-    </button>
-    <button class="section-share__item" type="button" onclick="shareTo('linkedin', this)">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zM8 19H5V8h3zM6.5 6.7a1.8 1.8 0 1 1 1.8-1.8 1.8 1.8 0 0 1-1.8 1.8zM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5z"/></svg>
-      LinkedIn
-    </button>
-    <button class="section-share__item" type="button" onclick="shareTo('copy', this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-      <span class="share-label">Copiar enlace</span>
-    </button>
-  </div>
-</div>
 
   <div class="container">
     <div class="crumbs">// acerca de etmlog</div>
@@ -2182,25 +2180,6 @@ p{margin:0 0 16px;color:var(--text-soft)}
 
 <!-- ====================== Servicios ====================== -->
 <section class="page-hero page-hero--services" id="servicos">
-  <div class="section-share is-dark" data-section="servicos" data-title="Portafolio de Servicios">
-  <button class="section-share__btn" type="button" aria-label="Compartir sección" onclick="toggleShare(this)">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-  </button>
-  <div class="section-share__menu" role="menu">
-    <button class="section-share__item" type="button" onclick="shareTo('whatsapp', this)">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.45A11.79 11.79 0 0 0 12 0a11.92 11.92 0 0 0-10.06 18.13L0 24l6.05-1.93A11.92 11.92 0 0 0 24 12a11.79 11.79 0 0 0-3.48-8.55zM12 21.81A9.84 9.84 0 0 1 7 20.44l-.36-.22-3.59 1.14 1.18-3.49-.23-.36A9.85 9.85 0 1 1 12 21.81zm5.4-7.35c-.3-.15-1.76-.87-2-1s-.47-.15-.67.15-.77 1-.94 1.18-.35.18-.65 0a8.1 8.1 0 0 1-2.39-1.47 9.13 9.13 0 0 1-1.66-2.06c-.17-.3 0-.47.13-.62s.3-.35.44-.52a2 2 0 0 0 .3-.5.55.55 0 0 0 0-.52c-.07-.15-.66-1.6-.91-2.18s-.48-.5-.66-.5h-.56a1.06 1.06 0 0 0-.78.37 3.27 3.27 0 0 0-1 2.43 5.69 5.69 0 0 0 1.19 3 13 13 0 0 0 5 4.39 16.42 16.42 0 0 0 1.66.61 4 4 0 0 0 1.85.12 3 3 0 0 0 2-1.4 2.46 2.46 0 0 0 .17-1.4c-.07-.12-.27-.2-.57-.35z"/></svg>
-      WhatsApp
-    </button>
-    <button class="section-share__item" type="button" onclick="shareTo('linkedin', this)">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zM8 19H5V8h3zM6.5 6.7a1.8 1.8 0 1 1 1.8-1.8 1.8 1.8 0 0 1-1.8 1.8zM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5z"/></svg>
-      LinkedIn
-    </button>
-    <button class="section-share__item" type="button" onclick="shareTo('copy', this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-      <span class="share-label">Copiar enlace</span>
-    </button>
-  </div>
-</div>
 
   <div class="container">
     <div class="crumbs">// servicios</div>
@@ -2239,8 +2218,7 @@ p{margin:0 0 16px;color:var(--text-soft)}
           <circle cx="70" cy="240" r="14" fill="none" stroke="#3EA5F0" stroke-width="1" opacity=".4"/>
           <circle class="route-dot b" cx="540" cy="80" r="7" fill="#F27507"/>
           <circle cx="540" cy="80" r="18" fill="none" stroke="#F27507" stroke-width="1" opacity=".45"/>
-          
-          
+
         </svg>
         <div class="svc-content">
           <header class="svc-meta">
@@ -2301,9 +2279,7 @@ p{margin:0 0 16px;color:var(--text-soft)}
           </g>
           
           <g transform="translate(20,28)" font-family="JetBrains Mono" font-size="8" fill="rgba(62,165,240,.5)" letter-spacing="1">
-            
-            
-            
+
           </g>
         </svg>
         <div class="svc-content">
@@ -2335,8 +2311,7 @@ p{margin:0 0 16px;color:var(--text-soft)}
             <path d="M0,-22 A22,22 0 0,1 22,0" fill="none" stroke="#F27507" stroke-width="2.2" stroke-linecap="round"/>
             <circle r="3.5" fill="#F27507"/>
           </g>
-          
-          
+
         </svg>
         <div class="svc-content">
           <header class="svc-meta">
@@ -2446,9 +2421,7 @@ p{margin:0 0 16px;color:var(--text-soft)}
           <circle cx="720" cy="40" r="6" fill="#F27507"/>
           <circle cx="720" cy="40" r="14" fill="none" stroke="#F27507" stroke-width="1" opacity=".5"/>
           <!-- Texto técnico -->
-          
-          
-          
+
         </svg>
         <div class="svc-content">
           <header class="svc-meta">
@@ -2471,25 +2444,6 @@ p{margin:0 0 16px;color:var(--text-soft)}
 
 <!-- ====================== Diferenciales ====================== -->
 <section class="page-hero page-hero--diff" id="Diferenciales">
-  <div class="section-share" data-section="Diferenciales" data-title="Diferenciales ETMLOG">
-  <button class="section-share__btn" type="button" aria-label="Compartir sección" onclick="toggleShare(this)">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-  </button>
-  <div class="section-share__menu" role="menu">
-    <button class="section-share__item" type="button" onclick="shareTo('whatsapp', this)">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.45A11.79 11.79 0 0 0 12 0a11.92 11.92 0 0 0-10.06 18.13L0 24l6.05-1.93A11.92 11.92 0 0 0 24 12a11.79 11.79 0 0 0-3.48-8.55zM12 21.81A9.84 9.84 0 0 1 7 20.44l-.36-.22-3.59 1.14 1.18-3.49-.23-.36A9.85 9.85 0 1 1 12 21.81zm5.4-7.35c-.3-.15-1.76-.87-2-1s-.47-.15-.67.15-.77 1-.94 1.18-.35.18-.65 0a8.1 8.1 0 0 1-2.39-1.47 9.13 9.13 0 0 1-1.66-2.06c-.17-.3 0-.47.13-.62s.3-.35.44-.52a2 2 0 0 0 .3-.5.55.55 0 0 0 0-.52c-.07-.15-.66-1.6-.91-2.18s-.48-.5-.66-.5h-.56a1.06 1.06 0 0 0-.78.37 3.27 3.27 0 0 0-1 2.43 5.69 5.69 0 0 0 1.19 3 13 13 0 0 0 5 4.39 16.42 16.42 0 0 0 1.66.61 4 4 0 0 0 1.85.12 3 3 0 0 0 2-1.4 2.46 2.46 0 0 0 .17-1.4c-.07-.12-.27-.2-.57-.35z"/></svg>
-      WhatsApp
-    </button>
-    <button class="section-share__item" type="button" onclick="shareTo('linkedin', this)">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zM8 19H5V8h3zM6.5 6.7a1.8 1.8 0 1 1 1.8-1.8 1.8 1.8 0 0 1-1.8 1.8zM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5z"/></svg>
-      LinkedIn
-    </button>
-    <button class="section-share__item" type="button" onclick="shareTo('copy', this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-      <span class="share-label">Copiar enlace</span>
-    </button>
-  </div>
-</div>
 
   <div class="container">
     <div class="crumbs">// diferenciales</div>
@@ -2640,28 +2594,8 @@ p{margin:0 0 16px;color:var(--text-soft)}
   </div>
 </section>
 
-
 <!-- ====================== Contacto ====================== -->
 <section class="page-hero" id="Contacto">
-  <div class="section-share" data-section="Contacto" data-title="Hable con ETMLOG">
-  <button class="section-share__btn" type="button" aria-label="Compartir sección" onclick="toggleShare(this)">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-  </button>
-  <div class="section-share__menu" role="menu">
-    <button class="section-share__item" type="button" onclick="shareTo('whatsapp', this)">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.45A11.79 11.79 0 0 0 12 0a11.92 11.92 0 0 0-10.06 18.13L0 24l6.05-1.93A11.92 11.92 0 0 0 24 12a11.79 11.79 0 0 0-3.48-8.55zM12 21.81A9.84 9.84 0 0 1 7 20.44l-.36-.22-3.59 1.14 1.18-3.49-.23-.36A9.85 9.85 0 1 1 12 21.81zm5.4-7.35c-.3-.15-1.76-.87-2-1s-.47-.15-.67.15-.77 1-.94 1.18-.35.18-.65 0a8.1 8.1 0 0 1-2.39-1.47 9.13 9.13 0 0 1-1.66-2.06c-.17-.3 0-.47.13-.62s.3-.35.44-.52a2 2 0 0 0 .3-.5.55.55 0 0 0 0-.52c-.07-.15-.66-1.6-.91-2.18s-.48-.5-.66-.5h-.56a1.06 1.06 0 0 0-.78.37 3.27 3.27 0 0 0-1 2.43 5.69 5.69 0 0 0 1.19 3 13 13 0 0 0 5 4.39 16.42 16.42 0 0 0 1.66.61 4 4 0 0 0 1.85.12 3 3 0 0 0 2-1.4 2.46 2.46 0 0 0 .17-1.4c-.07-.12-.27-.2-.57-.35z"/></svg>
-      WhatsApp
-    </button>
-    <button class="section-share__item" type="button" onclick="shareTo('linkedin', this)">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zM8 19H5V8h3zM6.5 6.7a1.8 1.8 0 1 1 1.8-1.8 1.8 1.8 0 0 1-1.8 1.8zM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5z"/></svg>
-      LinkedIn
-    </button>
-    <button class="section-share__item" type="button" onclick="shareTo('copy', this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-      <span class="share-label">Copiar enlace</span>
-    </button>
-  </div>
-</div>
 
   <div class="container">
     <div class="crumbs">// hable con etmlog</div>
@@ -2928,7 +2862,6 @@ p{margin:0 0 16px;color:var(--text-soft)}
   track.appendChild(clone);
 })();
 
-
 (function(){
   'use strict';
 
@@ -3040,54 +2973,120 @@ p{margin:0 0 16px;color:var(--text-soft)}
 })();
 </script>
 
+
+
+
+<div class="share-fab" id="shareFab" role="region" aria-label="Compartir sección actual">
+  <button class="share-fab__btn" type="button" onclick="toggleShareFab()" aria-haspopup="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+    <span>COMPARTIR</span>
+    <span class="share-fab__section" id="shareFabSection">ESTA SECCIÓN</span>
+  </button>
+  <div class="share-fab__menu" role="menu">
+    <div class="share-fab__hint">// Compartir</div>
+    <button class="share-fab__item" type="button" onclick="shareFabTo('whatsapp', this)">
+      <svg viewBox="0 0 24 24" fill="#25D366"><path d="M20.52 3.45A11.79 11.79 0 0 0 12 0a11.92 11.92 0 0 0-10.06 18.13L0 24l6.05-1.93A11.92 11.92 0 0 0 24 12a11.79 11.79 0 0 0-3.48-8.55zM12 21.81A9.84 9.84 0 0 1 7 20.44l-.36-.22-3.59 1.14 1.18-3.49-.23-.36A9.85 9.85 0 1 1 12 21.81zm5.4-7.35c-.3-.15-1.76-.87-2-1s-.47-.15-.67.15-.77 1-.94 1.18-.35.18-.65 0a8.1 8.1 0 0 1-2.39-1.47 9.13 9.13 0 0 1-1.66-2.06c-.17-.3 0-.47.13-.62s.3-.35.44-.52a2 2 0 0 0 .3-.5.55.55 0 0 0 0-.52c-.07-.15-.66-1.6-.91-2.18s-.48-.5-.66-.5h-.56a1.06 1.06 0 0 0-.78.37 3.27 3.27 0 0 0-1 2.43 5.69 5.69 0 0 0 1.19 3 13 13 0 0 0 5 4.39 16.42 16.42 0 0 0 1.66.61 4 4 0 0 0 1.85.12 3 3 0 0 0 2-1.4 2.46 2.46 0 0 0 .17-1.4c-.07-.12-.27-.2-.57-.35z"/></svg>
+      WhatsApp
+    </button>
+    <button class="share-fab__item" type="button" onclick="shareFabTo('linkedin', this)">
+      <svg viewBox="0 0 24 24" fill="#0A66C2"><path d="M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zM8 19H5V8h3zM6.5 6.7a1.8 1.8 0 1 1 1.8-1.8 1.8 1.8 0 0 1-1.8 1.8zM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5z"/></svg>
+      LinkedIn
+    </button>
+    <div class="share-fab__divider"></div>
+    <button class="share-fab__item" type="button" onclick="shareFabTo('copy', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span class="share-label">Copiar enlace</span>
+    </button>
+  </div>
+</div>
+
 <script>
-// Botão de compartilhar por seção
-function toggleShare(btn){
-  const wrapper = btn.closest('.section-share');
-  // Fecha outros menus abertos
-  document.querySelectorAll('.section-share.is-open').forEach(el => {
-    if(el !== wrapper) el.classList.remove('is-open');
-  });
-  wrapper.classList.toggle('is-open');
-}
-function shareTo(plat, btn){
-  const wrapper = btn.closest('.section-share');
-  const secao = wrapper.dataset.section;
-  const titulo = wrapper.dataset.title || document.title;
-  const url = window.location.origin + window.location.pathname + '#' + secao;
-  const texto = encodeURIComponent(`${titulo} — ETMLOG`);
-  const urlEnc = encodeURIComponent(url);
+// Botão de compartilhar flutuante (FAB)
+(function(){
+  const SECTION_LABELS = {"sobre": "INICIO", "servicios": "SERVICIOS", "diferenciales": "DIFERENCIALES", "contacto": "CONTACTO"};
+  const SECTION_TITLES = {"sobre": "Acerca de ETMLOG", "servicios": "Portafolio de Servicios ETMLOG", "diferenciales": "Diferenciales ETMLOG", "contacto": "Hable con ETMLOG"};
+  const DEFAULT_LABEL = 'ESTA SECCIÓN';
+  let currentSection = null;
+  let currentTitle = document.title;
+  const sectionEl = document.getElementById('shareFabSection');
   
-  if(plat === 'whatsapp'){
-    window.open(`https://wa.me/?text=${texto}%20${urlEnc}`, '_blank', 'noopener');
-  } else if(plat === 'linkedin'){
-    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${urlEnc}`, '_blank', 'noopener');
-  } else if(plat === 'copy'){
-    navigator.clipboard.writeText(url).then(() => {
-      const label = btn.querySelector('.share-label');
-      const original = label.textContent;
+  // Detectar seção visível via IntersectionObserver
+  const sectionIds = Object.keys(SECTION_LABELS);
+  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+  if (sections.length && 'IntersectionObserver' in window){
+    const io = new IntersectionObserver(entries => {
+      // Pega a seção mais "no topo" visível
+      const visible = entries.filter(e => e.isIntersecting)
+        .sort((a, b) => Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top));
+      if (visible.length){
+        const id = visible[0].target.id;
+        if (id !== currentSection){
+          currentSection = id;
+          currentTitle = SECTION_TITLES[id] || document.title;
+          if (sectionEl) sectionEl.textContent = (SECTION_LABELS[id] || DEFAULT_LABEL);
+        }
+      }
+    }, {rootMargin: '-30% 0px -50% 0px', threshold: 0});
+    sections.forEach(s => io.observe(s));
+  }
+})();
+
+function toggleShareFab(){
+  document.getElementById('shareFab').classList.toggle('is-open');
+}
+function shareFabTo(plat, btn){
+  const fab = document.getElementById('shareFab');
+  const url = window.location.origin + window.location.pathname;
+  // Detecta seção corrente (mesma lógica do IO acima — usa o que estiver no chip)
+  const chip = document.getElementById('shareFabSection');
+  const sectionLabel = chip ? chip.textContent.trim() : '';
+  // pegar o ID da seção visível agora
+  const sectionIds = ['sobre','servicos','servicios','diferenciais','diferenciales','contato','contacto'];
+  let sectionId = '';
+  for (const id of sectionIds){
+    const el = document.getElementById(id);
+    if (el){
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight/2 && r.bottom > window.innerHeight/2){
+        sectionId = id; break;
+      }
+    }
+  }
+  const fullUrl = sectionId ? url + '#' + sectionId : url;
+  const titleText = sectionLabel + ' — ETMLOG';
+  const enc = encodeURIComponent(fullUrl);
+  const txt = encodeURIComponent(titleText);
+  
+  if (plat === 'whatsapp'){
+    window.open('https://wa.me/?text=' + txt + '%20' + enc, '_blank', 'noopener');
+  } else if (plat === 'linkedin'){
+    window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + enc, '_blank', 'noopener');
+  } else if (plat === 'copy'){
+    navigator.clipboard.writeText(fullUrl).then(() => {
+      const lbl = btn.querySelector('.share-label');
+      const orig = lbl.textContent;
       btn.classList.add('copied');
-      label.textContent = '✓ ¡Copiado!';
+      lbl.textContent = '✓ ¡Copiado!';
       setTimeout(() => {
-        label.textContent = original;
+        lbl.textContent = orig;
         btn.classList.remove('copied');
-        wrapper.classList.remove('is-open');
+        fab.classList.remove('is-open');
       }, 1400);
       return;
     });
   }
-  setTimeout(() => wrapper.classList.remove('is-open'), 250);
+  if (plat !== 'copy') setTimeout(() => fab.classList.remove('is-open'), 250);
 }
-// Fecha menu ao clicar fora
 document.addEventListener('click', e => {
-  if(!e.target.closest('.section-share')){
-    document.querySelectorAll('.section-share.is-open').forEach(el => el.classList.remove('is-open'));
+  if (!e.target.closest('.share-fab')){
+    const f = document.getElementById('shareFab');
+    if (f) f.classList.remove('is-open');
   }
 });
-// ESC fecha menu
 document.addEventListener('keydown', e => {
-  if(e.key === 'Escape'){
-    document.querySelectorAll('.section-share.is-open').forEach(el => el.classList.remove('is-open'));
+  if (e.key === 'Escape'){
+    const f = document.getElementById('shareFab');
+    if (f) f.classList.remove('is-open');
   }
 });
 </script>
