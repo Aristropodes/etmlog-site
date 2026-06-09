@@ -1,28 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.etmlog.com.br/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.etmlog.com.br/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.etmlog.com.br/etmlog-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.etmlog.com.br/"/>
   </url>
   <url>
-    <loc>https://www.etmlog.com.br/sobre.html</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://www.etmlog.com.br/servicos.html</loc>
+    <loc>https://www.etmlog.com.br/etmlog-es.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://www.etmlog.com.br/diferenciais.html</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://www.etmlog.com.br/contato.html</loc>
-    <priority>0.9</priority>
-    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.etmlog.com.br/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.etmlog.com.br/etmlog-es.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.etmlog.com.br/"/>
   </url>
 </urlset>

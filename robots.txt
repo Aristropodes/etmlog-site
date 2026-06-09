@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /site/
+Disallow: /preview-pt.html
+Disallow: /preview-es.html
 
 Sitemap: https://www.etmlog.com.br/sitemap.xml
