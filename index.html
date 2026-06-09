@@ -1828,6 +1828,93 @@ p{margin:0 0 16px;color:var(--text-soft)}
 }
 /* fim FAB compartilhar */
 
+
+/* === FAQ Section === */
+.faq-section{
+  background:linear-gradient(180deg,#fafbfc 0%,#fff 100%);
+  padding:80px 0;
+  position:relative;
+}
+.faq-section .container{max-width:880px;margin:0 auto;padding:0 24px}
+.faq-section__header{text-align:center;margin-bottom:48px}
+.faq-section__tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-mono,'JetBrains Mono',monospace);
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--orange);
+  margin-bottom:16px;
+}
+.faq-section__title{
+  font-size:2.4rem;
+  font-weight:700;
+  color:var(--blue-deep);
+  letter-spacing:-.02em;
+  line-height:1.15;
+  margin:0 0 14px;
+}
+.faq-section__subtitle{
+  font-size:1rem;color:var(--text-soft);
+  max-width:560px;margin:0 auto;line-height:1.55;
+}
+.faq-list{display:flex;flex-direction:column;gap:14px}
+.faq-item{
+  background:#fff;
+  border:1px solid rgba(8,39,68,.08);
+  border-radius:14px;
+  overflow:hidden;
+  transition:border-color .25s,box-shadow .25s,transform .25s;
+}
+.faq-item:hover{
+  border-color:rgba(242,117,7,.4);
+  box-shadow:0 14px 32px -16px rgba(8,39,68,.18);
+}
+.faq-item[open]{
+  border-color:var(--orange);
+  box-shadow:0 18px 38px -16px rgba(242,117,7,.18);
+}
+.faq-item__question{
+  list-style:none;
+  cursor:pointer;
+  padding:22px 26px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;
+  font-size:1.08rem;
+  font-weight:600;
+  color:var(--blue-deep);
+  line-height:1.4;
+}
+.faq-item__question::-webkit-details-marker{display:none}
+.faq-item__icon{
+  flex-shrink:0;
+  width:32px;height:32px;
+  border-radius:50%;
+  background:rgba(242,117,7,.1);
+  color:var(--orange);
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:transform .3s var(--ease),background .25s;
+}
+.faq-item[open] .faq-item__icon{
+  transform:rotate(45deg);
+  background:var(--orange);
+  color:#fff;
+}
+.faq-item__answer{
+  padding:0 26px 26px 26px;
+  font-size:.96rem;
+  line-height:1.65;
+  color:var(--text-soft);
+  border-top:1px solid rgba(8,39,68,.06);
+  padding-top:22px;
+}
+.faq-item__answer strong{color:var(--blue-deep);font-weight:600}
+@media (max-width:680px){
+  .faq-section{padding:60px 0}
+  .faq-section__title{font-size:1.8rem}
+  .faq-item__question{font-size:1rem;padding:18px 20px;gap:12px}
+  .faq-item__answer{padding:0 20px 20px;font-size:.92rem}
+}
+/* fim FAQ */
+
 </style>
 
 <!-- SEO Canonical & Alternates -->
@@ -1906,7 +1993,8 @@ p{margin:0 0 16px;color:var(--text-soft)}
       <a href="#sobre">Sobre</a>
       <a href="#servicos">Serviços</a>
       <a href="#diferenciais">Diferenciais</a>
-      <a href="#contato">Contato</a>
+      <a href="#faq">FAQ</a>
+              <a href="#contato">Contato</a>
     </nav>
 
     <div class="header-cta">
@@ -2639,7 +2727,92 @@ p{margin:0 0 16px;color:var(--text-soft)}
 </section>
 
 <!-- ====================== CONTATO ====================== -->
-<section class="page-hero" id="contato">
+<!-- ───── FAQ ───── -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="faq-section__header">
+      <div class="faq-section__tag">// faq · ETMLOG</div>
+      <h2 class="faq-section__title">Perguntas Frequentes</h2>
+      <p class="faq-section__subtitle">O que mais nos perguntam sobre nossas operações, prazos e serviços.</p>
+    </div>
+    <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-item__question">
+        <span>Qual a diferença entre Rodoviário Dedicado e Fracionado?</span>
+        <span class="faq-item__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </span>
+      </summary>
+      <div class="faq-item__answer">No <strong>Rodoviário Dedicado</strong> o veículo é exclusivo para sua carga — sem desvios, sem paradas extras, com rota direta da origem ao destino. No <strong>Fracionado</strong>, sua carga viaja junto com outras cargas no mesmo veículo, com custo proporcional ao espaço ocupado. Dedicado é indicado quando há urgência, sensibilidade ou volume; fracionado para cargas menores onde otimização de custo é prioridade.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-item__question">
+        <span>Quais estados a ETMLOG atende?</span>
+        <span class="faq-item__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </span>
+      </summary>
+      <div class="faq-item__answer">A ETMLOG opera em todo o território nacional. Atendemos as cinco regiões do Brasil tanto em rodoviário quanto em aéreo, com origem flexível e cobertura ponta a ponta. Para rotas internacionais, consulte nosso comercial.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-item__question">
+        <span>Como funciona o Dedicado Especial para cargas sensíveis?</span>
+        <span class="faq-item__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </span>
+      </summary>
+      <div class="faq-item__answer">Para cargas sensíveis aplicamos um protocolo específico: análise prévia das características da carga, embalagem apropriada, definição de rota com menor risco, acompanhamento ativo durante todo o trajeto e, quando necessário, escolta armada e batedores. Inclui equipamentos como munck e guindastes quando o manuseio exige.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-item__question">
+        <span>Qual o prazo médio de resposta para cotações de frete?</span>
+        <span class="faq-item__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </span>
+      </summary>
+      <div class="faq-item__answer">Cotações pelo WhatsApp ((11) 91142-9001) costumam ser respondidas em até 1 hora útil. Solicitações via formulário do site ou e-mail (comercial@etmlog.com.br) retornam em até 1 dia útil com proposta estruturada.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-item__question">
+        <span>A ETMLOG oferece escolta armada e monitoramento 24h?</span>
+        <span class="faq-item__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </span>
+      </summary>
+      <div class="faq-item__answer">Sim, para operações de Dedicado Especial e Equipamentos Especiais oferecemos escolta armada, batedores e monitoramento em tempo real. O nível de proteção é dimensionado conforme valor da carga, rota e perfil de risco da operação.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-item__question">
+        <span>Como acompanhar minha carga durante o transporte?</span>
+        <span class="faq-item__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </span>
+      </summary>
+      <div class="faq-item__answer">Você fica em contato direto com a equipe responsável pela sua operação via WhatsApp. Não há fila genérica nem chatbot — você fala com quem conhece sua carga, com retornos proativos em pontos críticos da rota.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-item__question">
+        <span>A ETMLOG transporta produtos químicos ou cargas perigosas?</span>
+        <span class="faq-item__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </span>
+      </summary>
+      <div class="faq-item__answer">Avaliamos cada operação individualmente. Cargas perigosas (Classe ONU) exigem documentação, veículo e motorista habilitados conforme normas ANTT. Entre em contato com a ficha técnica do produto para avaliarmos viabilidade e estrutura adequada.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-item__question">
+        <span>Vocês emitem nota fiscal e CT-e eletrônicos?</span>
+        <span class="faq-item__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </span>
+      </summary>
+      <div class="faq-item__answer">Sim. A ETMLOG emite CT-e (Conhecimento de Transporte Eletrônico) para todas as operações, conforme exigência da Receita Federal e SEFAZ. A documentação fica disponível para o cliente desde o embarque até a entrega.</div>
+    </details>
+    </div>
+  </div>
+</section>
+
+  <section class="page-hero" id="contato">
 
   <div class="container">
     <div class="crumbs">// fale com a etmlog</div>
@@ -3369,6 +3542,75 @@ document.addEventListener('keydown', e => {
         "@type": "Country",
         "name": "Brasil"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qual a diferença entre Rodoviário Dedicado e Fracionado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No Rodoviário Dedicado o veículo é exclusivo para sua carga — sem desvios, sem paradas extras, com rota direta da origem ao destino. No Fracionado, sua carga viaja junto com outras cargas no mesmo veículo, com custo proporcional ao espaço ocupado. Dedicado é indicado quando há urgência, sensibilidade ou volume; fracionado para cargas menores onde otimização de custo é prioridade."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais estados a ETMLOG atende?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A ETMLOG opera em todo o território nacional. Atendemos as cinco regiões do Brasil tanto em rodoviário quanto em aéreo, com origem flexível e cobertura ponta a ponta. Para rotas internacionais, consulte nosso comercial."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona o Dedicado Especial para cargas sensíveis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para cargas sensíveis aplicamos um protocolo específico: análise prévia das características da carga, embalagem apropriada, definição de rota com menor risco, acompanhamento ativo durante todo o trajeto e, quando necessário, escolta armada e batedores. Inclui equipamentos como munck e guindastes quando o manuseio exige."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual o prazo médio de resposta para cotações de frete?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cotações pelo WhatsApp ((11) 91142-9001) costumam ser respondidas em até 1 hora útil. Solicitações via formulário do site ou e-mail (comercial@etmlog.com.br) retornam em até 1 dia útil com proposta estruturada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A ETMLOG oferece escolta armada e monitoramento 24h?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, para operações de Dedicado Especial e Equipamentos Especiais oferecemos escolta armada, batedores e monitoramento em tempo real. O nível de proteção é dimensionado conforme valor da carga, rota e perfil de risco da operação."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como acompanhar minha carga durante o transporte?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Você fica em contato direto com a equipe responsável pela sua operação via WhatsApp. Não há fila genérica nem chatbot — você fala com quem conhece sua carga, com retornos proativos em pontos críticos da rota."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A ETMLOG transporta produtos químicos ou cargas perigosas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Avaliamos cada operação individualmente. Cargas perigosas (Classe ONU) exigem documentação, veículo e motorista habilitados conforme normas ANTT. Entre em contato com a ficha técnica do produto para avaliarmos viabilidade e estrutura adequada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês emitem nota fiscal e CT-e eletrônicos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. A ETMLOG emite CT-e (Conhecimento de Transporte Eletrônico) para todas as operações, conforme exigência da Receita Federal e SEFAZ. A documentação fica disponível para o cliente desde o embarque até a entrega."
+          }
+        }
+      ]
     }
   ]
 }
