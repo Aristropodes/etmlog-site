@@ -2036,6 +2036,203 @@ html:not(.intro-pending) .hero-deco,
   .hero-deco{opacity:1;transform:none}
 }
 
+
+/* === Slogan slide 1: composição premium === */
+.hero-stage{position:relative}
+/* Glow ambiente atrás do slogan */
+.hero-glow{
+  position:absolute;left:50%;top:50%;
+  width:780px;height:380px;
+  transform:translate(-50%,-50%);
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 50%,rgba(62,165,240,.14) 0%,transparent 65%),
+    radial-gradient(ellipse 22% 40% at 50% 50%,rgba(242,117,7,.10) 0%,transparent 60%);
+  pointer-events:none;z-index:0;
+  opacity:0;
+  transition:opacity 1.2s cubic-bezier(.22,.61,.36,1);
+}
+html:not(.intro-pending) .hero-glow,
+.hero-stage.is-done .hero-glow{opacity:1}
+
+/* Coordenadas HUD nos cantos do hero-content */
+.hero-coord{
+  position:absolute;
+  font-family:var(--font-mono);
+  font-size:10px;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(213,224,240,.42);
+  pointer-events:none;
+  z-index:2;
+  opacity:0;
+  transition:opacity 1s cubic-bezier(.22,.61,.36,1) .2s;
+}
+.hero-coord::before{
+  content:"";display:inline-block;width:6px;height:1px;
+  background:var(--orange);margin-right:8px;vertical-align:middle;
+}
+.hero-coord--tr::before,.hero-coord--br::before{margin-right:0;margin-left:8px}
+.hero-coord--tr,.hero-coord--br{direction:rtl}
+.hero-coord--tr,.hero-coord--br span{direction:ltr;display:inline-block}
+.hero-coord--tl{top:0;left:-4px}
+.hero-coord--tr{top:0;right:-4px}
+.hero-coord--bl{bottom:-6px;left:-4px}
+.hero-coord--br{bottom:-6px;right:-4px}
+html:not(.intro-pending) .hero-coord,
+.hero-stage.is-done .hero-coord{opacity:1}
+
+/* Constelação de pontos */
+.hero-stars{
+  position:absolute;inset:-30px -10px;
+  pointer-events:none;
+  z-index:1;
+}
+.hero-star{
+  position:absolute;
+  left:var(--x);top:var(--y);
+  width:5px;height:5px;border-radius:50%;
+  background:rgba(62,165,240,.85);
+  box-shadow:0 0 10px rgba(62,165,240,.65);
+  opacity:0;
+  animation:heroStarPulse 5s ease-in-out infinite;
+  animation-delay:var(--d);
+}
+.hero-star--lg{width:7px;height:7px;background:rgba(255,153,71,.75);box-shadow:0 0 14px rgba(242,117,7,.55)}
+html:not(.intro-pending) .hero-star,
+.hero-stage.is-done .hero-star{opacity:1}
+@keyframes heroStarPulse{
+  0%,100%{opacity:.18;transform:scale(.85)}
+  50%{opacity:.95;transform:scale(1.1)}
+}
+
+/* Tag técnica acima do slogan */
+.hero-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  margin:0 auto 18px;
+  padding:7px 18px;
+  border:1px solid rgba(62,165,240,.28);
+  border-radius:999px;
+  background:rgba(62,165,240,.06);
+  backdrop-filter:blur(6px);
+  position:relative;z-index:3;
+  opacity:0;transform:translateY(-6px);
+  transition:opacity .9s cubic-bezier(.22,.61,.36,1) .3s,transform .9s cubic-bezier(.22,.61,.36,1) .3s;
+}
+html:not(.intro-pending) .hero-tag,
+.hero-stage.is-done .hero-tag{opacity:1;transform:translateY(0)}
+.hero-tag__pulse{
+  width:7px;height:7px;border-radius:50%;background:var(--orange);
+  box-shadow:0 0 10px var(--orange);
+  animation:heroTagPulse 2.2s ease-in-out infinite;
+  flex-shrink:0;
+}
+@keyframes heroTagPulse{
+  0%,100%{opacity:.5;transform:scale(.85)}
+  50%{opacity:1;transform:scale(1.15)}
+}
+.hero-tag__text{
+  font-family:var(--font-mono);font-size:10.5px;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(213,224,240,.92);line-height:1;
+}
+
+/* H1 com profundidade extra */
+.hero-stage h1{position:relative;z-index:3}
+.hero h1 .highlight{
+  position:relative;
+}
+.hero h1 .highlight::after{
+  content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,153,71,.7) 50%,transparent);
+  opacity:0;transform:scaleX(.3);transform-origin:center;
+  animation:heroHighlightLine 4s ease-in-out 6s 1 forwards;
+}
+html:not(.intro-pending) .hero h1 .highlight::after{
+  animation:heroHighlightLine 4s ease-in-out 1s 1 forwards;
+}
+@keyframes heroHighlightLine{
+  0%{opacity:0;transform:scaleX(.3)}
+  40%{opacity:1;transform:scaleX(1)}
+  100%{opacity:.55;transform:scaleX(1)}
+}
+
+/* Rota abaixo do slogan */
+.hero-route{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  width:100%;max-width:520px;
+  margin:28px auto 0;
+  position:relative;z-index:3;
+  opacity:0;transform:translateY(8px);
+  transition:opacity 1s cubic-bezier(.22,.61,.36,1) .5s,transform 1s cubic-bezier(.22,.61,.36,1) .5s;
+}
+html:not(.intro-pending) .hero-route,
+.hero-stage.is-done .hero-route{opacity:1;transform:translateY(0)}
+.hero-route__pt{
+  width:8px;height:8px;border-radius:50%;
+  border:1.5px solid rgba(62,165,240,.55);
+  background:rgba(62,165,240,.12);
+  flex-shrink:0;
+  box-shadow:0 0 12px rgba(62,165,240,.3);
+}
+.hero-route__seg{
+  flex:1;height:1px;
+  background:linear-gradient(90deg,rgba(62,165,240,0),rgba(62,165,240,.55) 50%,rgba(62,165,240,0));
+  max-width:160px;
+  position:relative;
+}
+.hero-route__seg::after{
+  content:"";position:absolute;left:0;top:-1px;width:24px;height:3px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent);
+  filter:blur(1px);
+  animation:heroRouteBeam 3.4s linear infinite;
+}
+.hero-route__seg:last-of-type::after{animation-direction:reverse;animation-delay:1.7s}
+@keyframes heroRouteBeam{
+  0%{left:-24px;opacity:0}
+  10%{opacity:1}
+  90%{opacity:1}
+  100%{left:100%;opacity:0}
+}
+.hero-route__hub{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;
+  width:22px;height:22px;flex-shrink:0;
+}
+.hero-route__hub-core{
+  width:9px;height:9px;border-radius:50%;background:var(--orange);
+  box-shadow:0 0 16px rgba(242,117,7,.7);
+  z-index:2;
+}
+.hero-route__hub-ring,.hero-route__hub-ring--2{
+  position:absolute;inset:0;border-radius:50%;
+  border:1px solid var(--orange);opacity:0;
+  animation:heroHubPulse 2.6s ease-out infinite;
+}
+.hero-route__hub-ring--2{animation-delay:1.3s}
+@keyframes heroHubPulse{
+  0%{transform:scale(.4);opacity:.75}
+  100%{transform:scale(2.6);opacity:0}
+}
+
+/* Hero-content precisa de posicionamento relativo pras coordenadas */
+.hero-content{position:relative}
+
+/* Mobile */
+@media (max-width:768px){
+  .hero-tag{padding:6px 14px;gap:8px}
+  .hero-tag__text{font-size:9.5px;letter-spacing:.14em}
+  .hero-coord{font-size:9px;letter-spacing:.14em}
+  .hero-coord--tl,.hero-coord--tr{display:none}
+  .hero-route{margin-top:22px;gap:10px}
+  .hero-route__seg{max-width:100px}
+  .hero-stars{display:none}
+}
+@media (max-width:480px){
+  .hero-coord--bl,.hero-coord--br{font-size:8.5px}
+  .hero-route__seg{max-width:60px}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-glow,.hero-stars,.hero-coord,.hero-tag,.hero-route,.hero-route__hub-ring,.hero-route__hub-ring--2,.hero-route__seg::after,.hero-h1--highlight::after{animation:none;transition:none;opacity:1;transform:none}
+}
+
 </style>
 
 <!-- SEO Canonical & Alternates -->
@@ -2241,31 +2438,41 @@ html:not(.intro-pending) .hero-deco,
             
           </div>
 
+          <!-- Visual ETMLOG: HUD + rota + constelação (aparecem após intro) -->
+          <div class="hero-glow" aria-hidden="true"></div>
+          <span class="hero-coord hero-coord--tl" aria-hidden="true">19°55'S · 44°03'W</span>
+          <span class="hero-coord hero-coord--tr" aria-hidden="true">REDE ATIVA</span>
+          <span class="hero-coord hero-coord--bl" aria-hidden="true">CONTAGEM · MG</span>
+          <span class="hero-coord hero-coord--br" aria-hidden="true">BR + UY</span>
+          <div class="hero-stars" aria-hidden="true">
+            <span class="hero-star" style="--x:6%;--y:18%;--d:0s"></span>
+            <span class="hero-star hero-star--lg" style="--x:14%;--y:62%;--d:.6s"></span>
+            <span class="hero-star" style="--x:22%;--y:34%;--d:.3s"></span>
+            <span class="hero-star" style="--x:80%;--y:24%;--d:.9s"></span>
+            <span class="hero-star hero-star--lg" style="--x:88%;--y:54%;--d:.4s"></span>
+            <span class="hero-star" style="--x:72%;--y:70%;--d:1.1s"></span>
+          </div>
+          <div class="hero-tag" aria-hidden="true">
+            <span class="hero-tag__pulse"></span>
+            <span class="hero-tag__text">// REDE LOGÍSTICA · MALHA BRASIL + URUGUAI</span>
+          </div>
+
           <!-- Slogan permanente (estado final) -->
           <h1>
             <span class="line">A logística nos conecta.</span>
             <span class="line"><span class="highlight">As pessoas</span> nos unem.</span>
           </h1>
 
-          <!-- Elementos gráficos ETMLOG (aparecem após intro) -->
-          <div class="hero-deco" aria-hidden="true">
-            <svg class="hero-deco__mark" viewBox="0 0 100 75" xmlns="http://www.w3.org/2000/svg">
-              <polygon points="25,8 70,8 64,18 19,18" fill="#3EA5F0"/>
-              <polygon points="64,8 82,8 76,18 58,18" fill="#F27507"/>
-              <polygon points="18,24 75,24 67,36 10,36" fill="#3370DB"/>
-              <polygon points="10,40 70,40 62,54 2,54" fill="#2A5EB9"/>
-            </svg>
-            <div class="hero-deco__route" aria-hidden="true">
-              <span class="hero-deco__dot"></span>
-              <span class="hero-deco__line"></span>
-              <span class="hero-deco__hub">
-                <span class="hero-deco__hub-pulse"></span>
-                <span class="hero-deco__hub-pulse hero-deco__hub-pulse--2"></span>
-                <span class="hero-deco__hub-core"></span>
-              </span>
-              <span class="hero-deco__line"></span>
-              <span class="hero-deco__dot"></span>
-            </div>
+          <div class="hero-route" aria-hidden="true">
+            <span class="hero-route__pt"></span>
+            <span class="hero-route__seg"></span>
+            <span class="hero-route__hub">
+              <span class="hero-route__hub-ring"></span>
+              <span class="hero-route__hub-ring hero-route__hub-ring--2"></span>
+              <span class="hero-route__hub-core"></span>
+            </span>
+            <span class="hero-route__seg"></span>
+            <span class="hero-route__pt"></span>
           </div>
 
           <!-- Botão pular animação -->
