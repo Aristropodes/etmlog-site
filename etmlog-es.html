@@ -1965,6 +1965,70 @@ p{margin:0 0 16px;color:var(--text-soft)}
 @media (max-width:1100px){.jv__inner{grid-template-columns:1fr;gap:24px;padding:12px 0 24px;min-height:auto}.jv__left{align-items:center;text-align:center}.jv__headline{text-align:center}.jv__sub{text-align:center;margin-left:auto;margin-right:auto}.jv__rule{margin-left:auto;margin-right:auto}.jv__signature{margin-left:auto;margin-right:auto;justify-content:center}.jv__right{min-height:340px;order:2}.jv__art{max-width:280px}}
 @media (max-width:680px){.jv__brand .jv-logo{width:165px}.jv__tag{padding:10px 18px 10px 14px;gap:10px}.jv__tag-text{font-size:.88rem;letter-spacing:.26em}.jv__tag-drop{width:18px;height:24px}.jv__headline{font-size:clamp(2rem,7vw,2.8rem)}.jv__art{max-width:240px}.jv__right{min-height:280px}.jv__signature{flex-direction:column;text-align:center;gap:10px}.jv__people{width:46px;height:36px}}
 @media (prefers-reduced-motion:reduce){.jv__art-drop,.jv__art-heart,.jv__art-pulse,.jv__route path,.jv__route-dots circle{animation:none;opacity:1;stroke-dashoffset:0;transform:none}}
+
+/* === Elementos gráficos ETMLOG no slide 1 (após intro) === */
+.hero-deco{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:18px;margin:24px auto 0;
+  width:100%;max-width:520px;
+  opacity:0;transform:translateY(8px);
+  pointer-events:none;
+  transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1);
+}
+html:not(.intro-pending) .hero-deco,
+.hero-stage.is-done .hero-deco{opacity:1;transform:translateY(0)}
+.hero-deco__mark{
+  width:54px;height:auto;
+  filter:drop-shadow(0 8px 18px rgba(62,165,240,.35));
+  animation:heroDecoMarkFloat 6s ease-in-out infinite;
+}
+@keyframes heroDecoMarkFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-4px)}
+}
+.hero-deco__route{
+  display:flex;align-items:center;justify-content:center;gap:14px;width:100%;
+}
+.hero-deco__dot{
+  width:8px;height:8px;border-radius:50%;
+  border:1.5px solid rgba(62,165,240,.5);
+  background:rgba(62,165,240,.1);
+  flex-shrink:0;
+}
+.hero-deco__line{
+  flex:1;height:1px;
+  background:linear-gradient(90deg,rgba(62,165,240,0),rgba(62,165,240,.55) 50%,rgba(62,165,240,0));
+  max-width:140px;
+}
+.hero-deco__hub{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;
+  width:18px;height:18px;flex-shrink:0;
+}
+.hero-deco__hub-core{
+  width:8px;height:8px;border-radius:50%;background:#F27507;
+  box-shadow:0 0 14px rgba(242,117,7,.7);
+  position:relative;z-index:2;
+}
+.hero-deco__hub-pulse,.hero-deco__hub-pulse--2{
+  position:absolute;inset:-1px;border-radius:50%;
+  border:1px solid #F27507;opacity:0;
+  animation:heroDecoHubPulse 2.6s ease-out infinite;
+}
+.hero-deco__hub-pulse--2{animation-delay:1.3s}
+@keyframes heroDecoHubPulse{
+  0%{transform:scale(.6);opacity:.7}
+  100%{transform:scale(2.4);opacity:0}
+}
+@media (max-width:680px){
+  .hero-deco{gap:14px;margin-top:18px}
+  .hero-deco__mark{width:44px}
+  .hero-deco__line{max-width:80px}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-deco__mark,.hero-deco__hub-pulse,.hero-deco__hub-pulse--2{animation:none}
+  .hero-deco{opacity:1;transform:none}
+}
+
 </style>
 
 <!-- SEO Canonical & Alternates -->
@@ -2175,6 +2239,27 @@ p{margin:0 0 16px;color:var(--text-soft)}
             <span class="line">La logística nos conecta.</span>
             <span class="line"><span class="highlight">Las personas</span> nos unen.</span>
           </h1>
+
+          <!-- Elementos gráficos ETMLOG (aparecem após intro) -->
+          <div class="hero-deco" aria-hidden="true">
+            <svg class="hero-deco__mark" viewBox="0 0 100 75" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="25,8 70,8 64,18 19,18" fill="#3EA5F0"/>
+              <polygon points="64,8 82,8 76,18 58,18" fill="#F27507"/>
+              <polygon points="18,24 75,24 67,36 10,36" fill="#3370DB"/>
+              <polygon points="10,40 70,40 62,54 2,54" fill="#2A5EB9"/>
+            </svg>
+            <div class="hero-deco__route" aria-hidden="true">
+              <span class="hero-deco__dot"></span>
+              <span class="hero-deco__line"></span>
+              <span class="hero-deco__hub">
+                <span class="hero-deco__hub-pulse"></span>
+                <span class="hero-deco__hub-pulse hero-deco__hub-pulse--2"></span>
+                <span class="hero-deco__hub-core"></span>
+              </span>
+              <span class="hero-deco__line"></span>
+              <span class="hero-deco__dot"></span>
+            </div>
+          </div>
 
           <!-- Botão Saltar animação -->
           <button class="hero-skip" id="heroSkip" type="button" aria-label="Saltar animação">Saltar</button>
