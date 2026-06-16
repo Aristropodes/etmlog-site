@@ -3729,7 +3729,7 @@ document.addEventListener('keydown', e => {
   const AUTO_MS = 9000;
   const INTRO_PERSIST_KEY = 'etmlog_hero_intro_seen';
   const introSeen = (() => { try { return !!sessionStorage.getItem(INTRO_PERSIST_KEY); } catch(e){ return false; } })();
-  const initialDelay = introSeen ? 800 : 10500;
+  const initialDelay = introSeen ? 3000 : 13000;
   function go(idx){
     idx = ((idx % slides.length) + slides.length) % slides.length;
     slides[currentIdx]?.classList.remove('is-active');
