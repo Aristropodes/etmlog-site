@@ -677,7 +677,7 @@ p{margin:0 0 16px;color:var(--text-soft)}
 .hero-stage h1{margin:0;width:100%}
 
 /* Estado inicial só se a intro está pendente (definido pelo script no head) */
-.intro-pending .hero-stage{min-height:300px;margin-bottom:6px}
+.intro-pending .hero-stage{min-height:390px;margin-bottom:8px}
 .intro-pending .hero-stage h1{
   opacity:0;visibility:hidden;
   position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);
@@ -736,7 +736,7 @@ p{margin:0 0 16px;color:var(--text-soft)}
   opacity:0;visibility:hidden;transition:opacity .6s ease-out, visibility .6s;
 }
 .hero-stage__anim svg{
-  width:auto;height:100%;max-width:100%;max-height:300px;
+  width:auto;height:100%;max-width:100%;max-height:390px;
   display:block;
 }
 
@@ -871,12 +871,12 @@ p{margin:0 0 16px;color:var(--text-soft)}
 .hero-skip:hover{color:#fff;border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.06)}
 
 @media (max-width:768px){
-  .intro-pending .hero-stage{min-height:300px}
-  .hero-stage__anim svg{max-height:300px}
+  .intro-pending .hero-stage{min-height:390px}
+  .hero-stage__anim svg{max-height:390px}
 }
 @media (max-width:480px){
-  .intro-pending .hero-stage{min-height:260px}
-  .hero-stage__anim svg{max-height:260px}
+  .intro-pending .hero-stage{min-height:338px}
+  .hero-stage__anim svg{max-height:338px}
 }
 @media (prefers-reduced-motion:reduce){
   .intro-pending .hero-stage{min-height:0!important}
@@ -4010,7 +4010,7 @@ document.addEventListener('keydown', e => {
 </script>
 
 <script>
-(function(){const slider=document.getElementById('heroSlider');if(!slider)return;const slides=slider.querySelectorAll('.hero-slide');const dots=document.getElementById('heroSliderDots');if(slides.length<2)return;let currentIdx=0,autoTimer=null;const AUTO_MS=4000,INTRO_KEY='etmlog_hero_intro_seen';const seen=(()=>{try{return !!sessionStorage.getItem(INTRO_KEY)}catch(e){return false}})();const initialDelay=seen?3000:13000;function go(i){i=((i%slides.length)+slides.length)%slides.length;slides[currentIdx]?.classList.remove('is-active');slides[i].classList.add('is-active');currentIdx=i;dots?.querySelectorAll('.hero-slider__dot').forEach((d,k)=>d.classList.toggle('is-active',k===i))}function startAuto(){stopAuto();autoTimer=setInterval(()=>go(currentIdx+1),AUTO_MS)}function stopAuto(){if(autoTimer){clearInterval(autoTimer);autoTimer=null}}function activate(){if(dots){dots.hidden=false;dots.classList.add('is-visible')}startAuto();try{sessionStorage.setItem(INTRO_KEY,'1')}catch(e){}}setTimeout(activate,initialDelay);dots?.addEventListener('click',(e)=>{const b=e.target.closest('.hero-slider__dot');if(!b)return;go(parseInt(b.dataset.target,10));stopAuto();setTimeout(startAuto,14000)});slider.addEventListener('mouseenter',stopAuto);slider.addEventListener('mouseleave',()=>{if(dots?.classList.contains('is-visible'))startAuto()});let tx=0;slider.addEventListener('touchstart',(e)=>{tx=e.touches[0].clientX},{passive:true});slider.addEventListener('touchend',(e)=>{const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50){go(currentIdx+(dx<0?1:-1));stopAuto();setTimeout(startAuto,14000)}})})();
+(function(){const slider=document.getElementById('heroSlider');if(!slider)return;const slides=slider.querySelectorAll('.hero-slide');const dots=document.getElementById('heroSliderDots');if(slides.length<2)return;let currentIdx=0,autoTimer=null;const AUTO_MS=5000,INTRO_KEY='etmlog_hero_intro_seen';const seen=(()=>{try{return !!sessionStorage.getItem(INTRO_KEY)}catch(e){return false}})();const initialDelay=seen?3000:13000;function go(i){i=((i%slides.length)+slides.length)%slides.length;slides[currentIdx]?.classList.remove('is-active');slides[i].classList.add('is-active');currentIdx=i;dots?.querySelectorAll('.hero-slider__dot').forEach((d,k)=>d.classList.toggle('is-active',k===i))}function startAuto(){stopAuto();autoTimer=setInterval(()=>go(currentIdx+1),AUTO_MS)}function stopAuto(){if(autoTimer){clearInterval(autoTimer);autoTimer=null}}function activate(){if(dots){dots.hidden=false;dots.classList.add('is-visible')}startAuto();try{sessionStorage.setItem(INTRO_KEY,'1')}catch(e){}}setTimeout(activate,initialDelay);dots?.addEventListener('click',(e)=>{const b=e.target.closest('.hero-slider__dot');if(!b)return;go(parseInt(b.dataset.target,10));stopAuto();setTimeout(startAuto,14000)});slider.addEventListener('mouseenter',stopAuto);slider.addEventListener('mouseleave',()=>{if(dots?.classList.contains('is-visible'))startAuto()});let tx=0;slider.addEventListener('touchstart',(e)=>{tx=e.touches[0].clientX},{passive:true});slider.addEventListener('touchend',(e)=>{const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50){go(currentIdx+(dx<0?1:-1));stopAuto();setTimeout(startAuto,14000)}})})();
 </script>
 </body>
 </html>

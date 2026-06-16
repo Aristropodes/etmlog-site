@@ -677,7 +677,7 @@ p{margin:0 0 16px;color:var(--text-soft)}
 .hero-stage h1{margin:0;width:100%}
 
 /* Estado inicial só se a intro está pendente (definido pelo script no head) */
-.intro-pending .hero-stage{min-height:300px;margin-bottom:6px}
+.intro-pending .hero-stage{min-height:390px;margin-bottom:8px}
 .intro-pending .hero-stage h1{
   opacity:0;visibility:hidden;
   position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);
@@ -736,7 +736,7 @@ p{margin:0 0 16px;color:var(--text-soft)}
   opacity:0;visibility:hidden;transition:opacity .6s ease-out, visibility .6s;
 }
 .hero-stage__anim svg{
-  width:auto;height:100%;max-width:100%;max-height:300px;
+  width:auto;height:100%;max-width:100%;max-height:390px;
   display:block;
 }
 
@@ -871,12 +871,12 @@ p{margin:0 0 16px;color:var(--text-soft)}
 .hero-skip:hover{color:#fff;border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.06)}
 
 @media (max-width:768px){
-  .intro-pending .hero-stage{min-height:300px}
-  .hero-stage__anim svg{max-height:300px}
+  .intro-pending .hero-stage{min-height:390px}
+  .hero-stage__anim svg{max-height:390px}
 }
 @media (max-width:480px){
-  .intro-pending .hero-stage{min-height:260px}
-  .hero-stage__anim svg{max-height:260px}
+  .intro-pending .hero-stage{min-height:338px}
+  .hero-stage__anim svg{max-height:338px}
 }
 @media (prefers-reduced-motion:reduce){
   .intro-pending .hero-stage{min-height:0!important}
@@ -4026,7 +4026,7 @@ document.addEventListener('keydown', e => {
   if(slides.length < 2) return;
   let currentIdx = 0;
   let autoTimer = null;
-  const AUTO_MS = 4000;
+  const AUTO_MS = 5000;
   const INTRO_PERSIST_KEY = 'etmlog_hero_intro_seen';
   const introSeen = (() => { try { return !!sessionStorage.getItem(INTRO_PERSIST_KEY); } catch(e){ return false; } })();
   const initialDelay = introSeen ? 3000 : 13000;
