@@ -131,7 +131,7 @@ p{margin:0 0 16px;color:var(--text-soft)}
 .nav-toggle svg{width:20px;height:20px}
 
 /* Hero */
-.hero{position:relative;background:var(--blue-deep);color:#fff;padding:120px 0 70px;
+.hero{position:relative;background:var(--blue-deep);color:#fff;padding:160px 0 110px;
   overflow:hidden;isolation:isolate}
 .hero::before{content:"";position:absolute;inset:0;
   background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
@@ -147,10 +147,10 @@ p{margin:0 0 16px;color:var(--text-soft)}
 .hero-content{width:100%}
 .hero-content .eyebrow{color:var(--orange-soft);justify-content:center}
 .hero h1{
-  font-size:clamp(2.6rem,5.4vw,4.4rem);
+  font-size:clamp(2.9rem,6.2vw,5rem);
   color:#fff;
   margin:0 auto;
-  line-height:1.02;
+  line-height:1.08;
   letter-spacing:-.025em;
   text-align:center;
   width:100%;
@@ -671,13 +671,13 @@ p{margin:0 0 16px;color:var(--text-soft)}
 .hero-stage{
   position:relative;
   width:100%;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  display:flex;align-items:center;justify-content:center;
   transition:min-height .8s var(--ease) .2s, margin .8s var(--ease) .2s;
 }
 .hero-stage h1{margin:0;width:100%}
 
 /* Estado inicial só se a intro está pendente (definido pelo script no head) */
-.intro-pending .hero-stage{min-height:390px;margin-bottom:8px}
+.intro-pending .hero-stage{min-height:380px;margin-bottom:8px}
 .intro-pending .hero-stage h1{
   opacity:0;visibility:hidden;
   position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);
@@ -695,16 +695,10 @@ p{margin:0 0 16px;color:var(--text-soft)}
   opacity:0;transform:translateY(12px);will-change:opacity,transform;
 }
 .hero-stage.is-done h1 .line:nth-child(1){
-  animation:lineFade 1.5s cubic-bezier(.22,.61,.36,1) .7s forwards;
+  animation:lineFade 2.2s cubic-bezier(.22,.61,.36,1) .8s forwards;
 }
 .hero-stage.is-done h1 .line:nth-child(2){
-  animation:lineFade 1.5s cubic-bezier(.22,.61,.36,1) 1.8s forwards;
-}
-.hero-stage.is-done h1 .line:nth-child(3){
-  animation:lineFade 1.5s cubic-bezier(.22,.61,.36,1) 2.9s forwards;
-}
-.hero-stage.is-done h1 .line:nth-child(4){
-  animation:lineFade 1.5s cubic-bezier(.22,.61,.36,1) 4.0s forwards;
+  animation:lineFade 2.2s cubic-bezier(.22,.61,.36,1) 4.2s forwards;
 }
 @keyframes lineFade{
   0%  {opacity:0;transform:translateY(12px);filter:blur(2px)}
@@ -712,7 +706,7 @@ p{margin:0 0 16px;color:var(--text-soft)}
   100%{opacity:1;transform:translateY(0);filter:blur(0)}
 }
 /* Brilho discreto em "As pessoas" — começa após linha 2 estabilizar */
-.hero-stage.is-done h1 .line:nth-child(3) .highlight{
+.hero-stage.is-done h1 .line:nth-child(2) .highlight{
   animation:highlightGlow 4s ease-in-out 5.6s 1 forwards;
 }
 @keyframes highlightGlow{
@@ -736,7 +730,7 @@ p{margin:0 0 16px;color:var(--text-soft)}
   opacity:0;visibility:hidden;transition:opacity .6s ease-out, visibility .6s;
 }
 .hero-stage__anim svg{
-  width:auto;height:100%;max-width:100%;max-height:390px;
+  width:auto;height:100%;max-width:100%;max-height:380px;
   display:block;
 }
 
@@ -871,12 +865,12 @@ p{margin:0 0 16px;color:var(--text-soft)}
 .hero-skip:hover{color:#fff;border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.06)}
 
 @media (max-width:768px){
-  .intro-pending .hero-stage{min-height:390px}
-  .hero-stage__anim svg{max-height:390px}
+  .intro-pending .hero-stage{min-height:300px}
+  .hero-stage__anim svg{max-height:300px}
 }
 @media (max-width:480px){
-  .intro-pending .hero-stage{min-height:338px}
-  .hero-stage__anim svg{max-height:338px}
+  .intro-pending .hero-stage{min-height:260px}
+  .hero-stage__anim svg{max-height:260px}
 }
 @media (prefers-reduced-motion:reduce){
   .intro-pending .hero-stage{min-height:0!important}
@@ -1924,8 +1918,8 @@ p{margin:0 0 16px;color:var(--text-soft)}
 
 /* === HERO SLIDER === */
 .hero-slider{display:grid;grid-template-areas:"stack";width:100%}
-.hero-slide{grid-area:stack;width:100%;opacity:0;visibility:hidden;transition:opacity .4s cubic-bezier(.22,.61,.36,1),visibility 0s linear .4s;pointer-events:none}
-.hero-slide.is-active{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .4s cubic-bezier(.22,.61,.36,1),visibility 0s linear 0s}
+.hero-slide{grid-area:stack;width:100%;opacity:0;visibility:hidden;transition:opacity .9s cubic-bezier(.22,.61,.36,1),visibility 0s linear .9s;pointer-events:none}
+.hero-slide.is-active{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .9s cubic-bezier(.22,.61,.36,1),visibility 0s linear 0s}
 .hero-slider__dots{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:12px;z-index:5}
 .hero-slider__dots[hidden]{display:none}
 .hero-slider__dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.28);border:0;cursor:pointer;padding:0;transition:background .2s,transform .2s}
@@ -1936,7 +1930,7 @@ p{margin:0 0 16px;color:var(--text-soft)}
 .hero-slide--2{--jv-red:#E11D39;--jv-red-soft:#FF5872;--jv-red-deep:#A00C24}
 .jv{position:relative;width:100%;color:#fff}
 .jv__bg{position:absolute;inset:0;background:radial-gradient(ellipse at 85% 20%,rgba(225,29,57,.22) 0%,transparent 55%),radial-gradient(ellipse at 20% 80%,rgba(62,165,240,.14) 0%,transparent 60%);pointer-events:none;z-index:0}
-.jv__inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.62fr);gap:40px;align-items:center;padding:12px 0 20px;min-height:380px}
+.jv__inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.62fr);gap:48px;align-items:center;padding:18px 0 30px;min-height:520px}
 .jv__left{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:22px}
 .jv__brand .jv-logo{width:210px;height:auto;display:block}
 .jv__tag{display:inline-flex;align-items:center;gap:12px;padding:12px 22px 12px 18px;border:2px solid var(--jv-red);border-radius:12px;background:rgba(225,29,57,.1);box-shadow:0 0 0 4px rgba(225,29,57,.08),0 18px 50px -22px rgba(225,29,57,.7);backdrop-filter:blur(4px)}
@@ -1955,7 +1949,7 @@ p{margin:0 0 16px;color:var(--text-soft)}
 .jv__signature{display:flex;align-items:center;gap:18px;padding-top:8px;border-top:1px solid rgba(255,255,255,.08);width:100%;max-width:420px}
 .jv__people{width:54px;height:42px;flex-shrink:0}
 .jv__signature-text{font-family:'JetBrains Mono',monospace;font-size:.84rem;line-height:1.4;color:rgba(213,224,240,.82);letter-spacing:.04em}
-.jv__right{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;min-height:340px}
+.jv__right{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;min-height:480px}
 .jv__art{width:100%;max-width:420px;height:auto;display:block}
 .jv__art-drop{filter:drop-shadow(0 30px 60px rgba(225,29,57,.45));transform-origin:200px 270px;animation:jvDropFloat 6.5s ease-in-out infinite}
 .jv__art-heart{transform-origin:200px 188px;animation:jvHeartBeat 1.6s ease-in-out infinite}
@@ -1978,267 +1972,6 @@ p{margin:0 0 16px;color:var(--text-soft)}
 @media (max-width:1100px){.jv__inner{grid-template-columns:1fr;gap:24px;padding:12px 0 24px;min-height:auto}.jv__left{align-items:center;text-align:center}.jv__headline{text-align:center}.jv__sub{text-align:center;margin-left:auto;margin-right:auto}.jv__rule{margin-left:auto;margin-right:auto}.jv__signature{margin-left:auto;margin-right:auto;justify-content:center}.jv__right{min-height:340px;order:2}.jv__art{max-width:280px}}
 @media (max-width:680px){.jv__brand .jv-logo{width:165px}.jv__tag{padding:10px 18px 10px 14px;gap:10px}.jv__tag-text{font-size:.88rem;letter-spacing:.26em}.jv__tag-drop{width:18px;height:24px}.jv__headline{font-size:clamp(2rem,7vw,2.8rem)}.jv__art{max-width:240px}.jv__right{min-height:280px}.jv__signature{flex-direction:column;text-align:center;gap:10px}.jv__people{width:46px;height:36px}}
 @media (prefers-reduced-motion:reduce){.jv__art-drop,.jv__art-heart,.jv__art-pulse,.jv__route path,.jv__route-dots circle{animation:none;opacity:1;stroke-dashoffset:0;transform:none}}
-
-/* === Elementos gráficos ETMLOG no slide 1 (após intro) === */
-.hero-deco{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:18px;margin:24px auto 0;
-  width:100%;max-width:520px;
-  opacity:0;transform:translateY(8px);
-  pointer-events:none;
-  transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1);
-}
-html:not(.intro-pending) .hero-deco,
-.hero-stage.is-done .hero-deco{opacity:1;transform:translateY(0)}
-.hero-deco__mark{
-  width:54px;height:auto;
-  filter:drop-shadow(0 8px 18px rgba(62,165,240,.35));
-  animation:heroDecoMarkFloat 6s ease-in-out infinite;
-}
-@keyframes heroDecoMarkFloat{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-4px)}
-}
-.hero-deco__route{
-  display:flex;align-items:center;justify-content:center;gap:14px;width:100%;
-}
-.hero-deco__dot{
-  width:8px;height:8px;border-radius:50%;
-  border:1.5px solid rgba(62,165,240,.5);
-  background:rgba(62,165,240,.1);
-  flex-shrink:0;
-}
-.hero-deco__line{
-  flex:1;height:1px;
-  background:linear-gradient(90deg,rgba(62,165,240,0),rgba(62,165,240,.55) 50%,rgba(62,165,240,0));
-  max-width:140px;
-}
-.hero-deco__hub{
-  position:relative;display:inline-flex;align-items:center;justify-content:center;
-  width:18px;height:18px;flex-shrink:0;
-}
-.hero-deco__hub-core{
-  width:8px;height:8px;border-radius:50%;background:#F27507;
-  box-shadow:0 0 14px rgba(242,117,7,.7);
-  position:relative;z-index:2;
-}
-.hero-deco__hub-pulse,.hero-deco__hub-pulse--2{
-  position:absolute;inset:-1px;border-radius:50%;
-  border:1px solid #F27507;opacity:0;
-  animation:heroDecoHubPulse 2.6s ease-out infinite;
-}
-.hero-deco__hub-pulse--2{animation-delay:1.3s}
-@keyframes heroDecoHubPulse{
-  0%{transform:scale(.6);opacity:.7}
-  100%{transform:scale(2.4);opacity:0}
-}
-@media (max-width:680px){
-  .hero-deco{gap:14px;margin-top:18px}
-  .hero-deco__mark{width:44px}
-  .hero-deco__line{max-width:80px}
-}
-@media (prefers-reduced-motion:reduce){
-  .hero-deco__mark,.hero-deco__hub-pulse,.hero-deco__hub-pulse--2{animation:none}
-  .hero-deco{opacity:1;transform:none}
-}
-
-
-/* === Slogan slide 1: composição premium === */
-.hero-stage{position:relative}
-/* Glow ambiente atrás do slogan */
-.hero-glow{
-  position:absolute;left:50%;top:50%;
-  width:780px;height:380px;
-  transform:translate(-50%,-50%);
-  background:
-    radial-gradient(ellipse 60% 50% at 50% 50%,rgba(62,165,240,.14) 0%,transparent 65%),
-    radial-gradient(ellipse 22% 40% at 50% 50%,rgba(242,117,7,.10) 0%,transparent 60%);
-  pointer-events:none;z-index:0;
-  opacity:0;
-  transition:opacity 1.2s cubic-bezier(.22,.61,.36,1);
-}
-html:not(.intro-pending) .hero-glow,
-.hero-stage.is-done .hero-glow{opacity:1}
-
-/* Coordenadas HUD nos cantos do hero-content */
-.hero-coord{
-  position:absolute;
-  font-family:var(--font-mono);
-  font-size:10px;font-weight:500;
-  letter-spacing:.18em;text-transform:uppercase;
-  color:rgba(213,224,240,.42);
-  pointer-events:none;
-  z-index:2;
-  opacity:0;
-  transition:opacity 1s cubic-bezier(.22,.61,.36,1) .2s;
-}
-.hero-coord::before{
-  content:"";display:inline-block;width:6px;height:1px;
-  background:var(--orange);margin-right:8px;vertical-align:middle;
-}
-.hero-coord--tr::before,.hero-coord--br::before{margin-right:0;margin-left:8px}
-.hero-coord--tr,.hero-coord--br{direction:rtl}
-.hero-coord--tr,.hero-coord--br span{direction:ltr;display:inline-block}
-.hero-coord--tl{top:0;left:-4px}
-.hero-coord--tr{top:0;right:-4px}
-.hero-coord--bl{bottom:-6px;left:-4px}
-.hero-coord--br{bottom:-6px;right:-4px}
-html:not(.intro-pending) .hero-coord,
-.hero-stage.is-done .hero-coord{opacity:1}
-
-/* Constelação de pontos */
-.hero-stars{
-  position:absolute;inset:-30px -10px;
-  pointer-events:none;
-  z-index:1;
-}
-.hero-star{
-  position:absolute;
-  left:var(--x);top:var(--y);
-  width:5px;height:5px;border-radius:50%;
-  background:rgba(62,165,240,.85);
-  box-shadow:0 0 10px rgba(62,165,240,.65);
-  opacity:0;
-  animation:heroStarPulse 5s ease-in-out infinite;
-  animation-delay:var(--d);
-}
-.hero-star--lg{width:7px;height:7px;background:rgba(255,153,71,.75);box-shadow:0 0 14px rgba(242,117,7,.55)}
-html:not(.intro-pending) .hero-star,
-.hero-stage.is-done .hero-star{opacity:1}
-@keyframes heroStarPulse{
-  0%,100%{opacity:.18;transform:scale(.85)}
-  50%{opacity:.95;transform:scale(1.1)}
-}
-
-/* Tag técnica acima do slogan */
-.hero-tag{
-  display:inline-flex;align-items:center;gap:10px;
-  margin:0 auto 18px;
-  padding:7px 18px;
-  border:1px solid rgba(62,165,240,.28);
-  border-radius:999px;
-  background:rgba(62,165,240,.06);
-  backdrop-filter:blur(6px);
-  position:relative;z-index:3;
-  opacity:0;transform:translateY(-6px);
-  transition:opacity .9s cubic-bezier(.22,.61,.36,1) .3s,transform .9s cubic-bezier(.22,.61,.36,1) .3s;
-}
-html:not(.intro-pending) .hero-tag,
-.hero-stage.is-done .hero-tag{opacity:1;transform:translateY(0)}
-.hero-tag__pulse{
-  width:7px;height:7px;border-radius:50%;background:var(--orange);
-  box-shadow:0 0 10px var(--orange);
-  animation:heroTagPulse 2.2s ease-in-out infinite;
-  flex-shrink:0;
-}
-@keyframes heroTagPulse{
-  0%,100%{opacity:.5;transform:scale(.85)}
-  50%{opacity:1;transform:scale(1.15)}
-}
-.hero-tag__text{
-  font-family:var(--font-mono);font-size:10.5px;font-weight:500;
-  letter-spacing:.18em;text-transform:uppercase;
-  color:rgba(213,224,240,.92);line-height:1;
-}
-
-/* H1 com profundidade extra */
-.hero-stage h1{position:relative;z-index:3}
-.hero h1 .highlight{
-  position:relative;
-}
-.hero h1 .highlight::after{
-  content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(255,153,71,.7) 50%,transparent);
-  opacity:0;transform:scaleX(.3);transform-origin:center;
-  animation:heroHighlightLine 4s ease-in-out 6s 1 forwards;
-}
-html:not(.intro-pending) .hero h1 .highlight::after{
-  animation:heroHighlightLine 4s ease-in-out 1s 1 forwards;
-}
-@keyframes heroHighlightLine{
-  0%{opacity:0;transform:scaleX(.3)}
-  40%{opacity:1;transform:scaleX(1)}
-  100%{opacity:.55;transform:scaleX(1)}
-}
-
-/* Rota abaixo do slogan */
-.hero-route{
-  display:flex;align-items:center;justify-content:center;gap:14px;
-  width:100%;max-width:520px;
-  margin:28px auto 0;
-  position:relative;z-index:3;
-  opacity:0;transform:translateY(8px);
-  transition:opacity 1s cubic-bezier(.22,.61,.36,1) .5s,transform 1s cubic-bezier(.22,.61,.36,1) .5s;
-}
-html:not(.intro-pending) .hero-route,
-.hero-stage.is-done .hero-route{opacity:1;transform:translateY(0)}
-.hero-route__pt{
-  width:8px;height:8px;border-radius:50%;
-  border:1.5px solid rgba(62,165,240,.55);
-  background:rgba(62,165,240,.12);
-  flex-shrink:0;
-  box-shadow:0 0 12px rgba(62,165,240,.3);
-}
-.hero-route__seg{
-  flex:1;height:1px;
-  background:linear-gradient(90deg,rgba(62,165,240,0),rgba(62,165,240,.55) 50%,rgba(62,165,240,0));
-  max-width:160px;
-  position:relative;
-}
-.hero-route__seg::after{
-  content:"";position:absolute;left:0;top:-1px;width:24px;height:3px;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent);
-  filter:blur(1px);
-  animation:heroRouteBeam 3.4s linear infinite;
-}
-.hero-route__seg:last-of-type::after{animation-direction:reverse;animation-delay:1.7s}
-@keyframes heroRouteBeam{
-  0%{left:-24px;opacity:0}
-  10%{opacity:1}
-  90%{opacity:1}
-  100%{left:100%;opacity:0}
-}
-.hero-route__hub{
-  position:relative;display:inline-flex;align-items:center;justify-content:center;
-  width:22px;height:22px;flex-shrink:0;
-}
-.hero-route__hub-core{
-  width:9px;height:9px;border-radius:50%;background:var(--orange);
-  box-shadow:0 0 16px rgba(242,117,7,.7);
-  z-index:2;
-}
-.hero-route__hub-ring,.hero-route__hub-ring--2{
-  position:absolute;inset:0;border-radius:50%;
-  border:1px solid var(--orange);opacity:0;
-  animation:heroHubPulse 2.6s ease-out infinite;
-}
-.hero-route__hub-ring--2{animation-delay:1.3s}
-@keyframes heroHubPulse{
-  0%{transform:scale(.4);opacity:.75}
-  100%{transform:scale(2.6);opacity:0}
-}
-
-/* Hero-content precisa de posicionamento relativo pras coordenadas */
-.hero-content{position:relative}
-
-/* Mobile */
-@media (max-width:768px){
-  .hero-tag{padding:6px 14px;gap:8px}
-  .hero-tag__text{font-size:9.5px;letter-spacing:.14em}
-  .hero-coord{font-size:9px;letter-spacing:.14em}
-  .hero-coord--tl,.hero-coord--tr{display:none}
-  .hero-route{margin-top:22px;gap:10px}
-  .hero-route__seg{max-width:100px}
-  .hero-stars{display:none}
-}
-@media (max-width:480px){
-  .hero-coord--bl,.hero-coord--br{font-size:8.5px}
-  .hero-route__seg{max-width:60px}
-}
-@media (prefers-reduced-motion:reduce){
-  .hero-glow,.hero-stars,.hero-coord,.hero-tag,.hero-route,.hero-route__hub-ring,.hero-route__hub-ring--2,.hero-route__seg::after,.hero-h1--highlight::after{animation:none;transition:none;opacity:1;transform:none}
-}
-
 </style>
 
 <!-- SEO Canonical & Alternates -->
@@ -2269,9 +2002,6 @@ html:not(.intro-pending) .hero-route,
 <meta name="twitter:title" content="ETMLOG | Transporte de Cargas com Controle, Suporte e Responsabilidade">
 <meta name="twitter:description" content="Transporte de cargas com controle, suporte e responsabilidade operacional. A ETMLOG acompanha cada etapa, do primeiro contato à entrega final.">
 <meta name="twitter:image" content="https://www.etmlog.com.br/og-image.png">
-<link rel="image_src" href="https://www.etmlog.com.br/og-image.png">
-<meta name="thumbnail" content="https://www.etmlog.com.br/og-image.png">
-<meta itemprop="image" content="https://www.etmlog.com.br/og-image.png">
 <meta name="twitter:image:alt" content="ETMLOG — A logística nos conecta. As pessoas nos unem.">
 
 <!-- Performance: DNS Prefetch & Preconnect -->
@@ -2287,7 +2017,7 @@ html:not(.intro-pending) .hero-route,
 <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="bingbot" content="index, follow">
 
-<!-- build-trigger: 1781618164 --></head>
+</head>
 <body>
 
 <!-- ====================== HEADER ====================== -->
@@ -2318,6 +2048,7 @@ html:not(.intro-pending) .hero-route,
     <nav class="nav" id="mainNav" aria-label="Navegação principal">
       <a href="#inicio" class="active">Início</a>
       <a href="#sobre">Sobre</a>
+      <a href="#qualidade">Qualidade</a>
       <a href="#servicos">Serviços</a>
       <a href="#diferenciais">Diferenciais</a>
       <a href="#faq">FAQ</a>
@@ -2447,44 +2178,11 @@ html:not(.intro-pending) .hero-route,
             
           </div>
 
-          <!-- Visual ETMLOG: HUD + rota + constelação (aparecem após intro) -->
-          <div class="hero-glow" aria-hidden="true"></div>
-          <span class="hero-coord hero-coord--tl" aria-hidden="true">19°55'S · 44°03'W</span>
-          <span class="hero-coord hero-coord--tr" aria-hidden="true">REDE ATIVA</span>
-          <span class="hero-coord hero-coord--bl" aria-hidden="true">CONTAGEM · MG</span>
-          <span class="hero-coord hero-coord--br" aria-hidden="true">BR + UY</span>
-          <div class="hero-stars" aria-hidden="true">
-            <span class="hero-star" style="--x:6%;--y:18%;--d:0s"></span>
-            <span class="hero-star hero-star--lg" style="--x:14%;--y:62%;--d:.6s"></span>
-            <span class="hero-star" style="--x:22%;--y:34%;--d:.3s"></span>
-            <span class="hero-star" style="--x:80%;--y:24%;--d:.9s"></span>
-            <span class="hero-star hero-star--lg" style="--x:88%;--y:54%;--d:.4s"></span>
-            <span class="hero-star" style="--x:72%;--y:70%;--d:1.1s"></span>
-          </div>
-          <div class="hero-tag" aria-hidden="true">
-            <span class="hero-tag__pulse"></span>
-            <span class="hero-tag__text">// REDE LOGÍSTICA · MALHA BRASIL + URUGUAI</span>
-          </div>
-
           <!-- Slogan permanente (estado final) -->
           <h1>
-            <span class="line">A logística</span>
-            <span class="line">nos conecta.</span>
-            <span class="line"><span class="highlight">As pessoas</span></span>
-            <span class="line">nos unem.</span>
+            <span class="line">A logística nos conecta.</span>
+            <span class="line"><span class="highlight">As pessoas</span> nos unem.</span>
           </h1>
-
-          <div class="hero-route" aria-hidden="true">
-            <span class="hero-route__pt"></span>
-            <span class="hero-route__seg"></span>
-            <span class="hero-route__hub">
-              <span class="hero-route__hub-ring"></span>
-              <span class="hero-route__hub-ring hero-route__hub-ring--2"></span>
-              <span class="hero-route__hub-core"></span>
-            </span>
-            <span class="hero-route__seg"></span>
-            <span class="hero-route__pt"></span>
-          </div>
 
           <!-- Botão pular animação -->
           <button class="hero-skip" id="heroSkip" type="button" aria-label="Pular animação">Pular</button>
@@ -2493,7 +2191,45 @@ html:not(.intro-pending) .hero-route,
 
       </div>
       </div>
-      
+      <div class="hero-slide hero-slide--2" data-slide="2" aria-label="Campanha Junho Vermelho">
+        <div class="jv">
+          <div class="jv__bg" aria-hidden="true"></div>
+          <div class="jv__inner">
+            <div class="jv__left">
+              <div class="jv__brand" aria-label="ETMLOG"><svg class="jv-logo" viewBox="0 0 1080 294.14" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ETMLOG"><g transform="translate(-153.5071 -554.9999) scale(0.017277)"><g><path fill="#3EA5F0" d="M16192.99 37910.58l5196.88 0.24c1774.77,-2.26 1400.16,218.55 2089.77,-1175.68 179.24,-362.41 360.81,-713 536.07,-1079.08 186.32,-389.2 777.07,-1136.44 251.05,-1211.73l-7462.38 -1.45c-616.03,3.55 -535.2,-96.26 -979.14,796.21 -155.37,312.35 -1159.68,2261.42 -1191.81,2444.79 -55.03,313.97 352.39,228.66 642.42,227.7 305.69,-1.02 611.44,-0.67 917.14,-1z"/><path fill="#F27507" d="M24131.97 37847.57c352.56,121.87 2471.94,105.81 3066.85,72.83 395.98,-21.97 418.66,-227.2 558.29,-531.07 211.3,-459.86 477.35,-951.59 705.41,-1390.66 212.4,-408.92 656.89,-1084.61 627.16,-1537.6l-3332.7 -9.25c-330.02,509.47 -581.55,1104.42 -862.18,1647.13 -190.02,367.48 -774.32,1399.86 -762.83,1748.62z"/><path fill="#3370DB" d="M14096.77 42365.39l10219.07 8.96c245.66,-0.72 500.53,3.27 745.22,-5.54 304.45,-11 375.73,-78.15 491.9,-288.82l1282.59 -2557.8c279.49,-535.46 301.3,-656.72 -335.49,-652.96 -3856.31,22.85 -7770.61,-31.51 -11619.85,-4.62 -244.48,1.7 -250.21,-25.98 -399.69,138.89 -188.25,207.67 -1185.07,2267.43 -1402.53,2698.31 -88.88,176.14 -376.33,598.01 -25.64,657.82 192.15,32.78 808.93,5.35 1044.42,5.76z"/><path fill="#2A5EB9" d="M12830.32 43381.01l-1584.23 3141.81c-56.04,173.2 -70.9,156.37 42.72,239.95 129.72,106.3 9467.74,48.21 10930.81,52.84 1481.29,4.69 947.28,314.68 1971.09,-1688.49 200.47,-392.22 390.9,-812.76 616.08,-1209.85 423.23,-746.32 -105.28,-584.72 -1015.01,-584.91l-7336.77 -1.88c-940.64,-0.01 -2797.66,-102.11 -3624.69,50.53z"/></g><g fill="#FFFFFF"><polygon points="31410.92,44756.16 36136.92,44776.74 36136.51,43657.14 32819.11,43643.21 32819.42,42235.64 35636.45,42235.38 35651.16,41133.45 32823.47,41131.85 32819.16,39833.32 36022.47,39815.45 36019.1,38678.14 31419.12,38678.76 "/><polygon points="36564.78,39815.98 38516.66,39833.22 38516.72,44769 39931.7,44774.38 39931.87,39832.28 41870.32,39832.28 41879.68,38678.37 36572.43,38678.83 "/><path d="M42634.8 44755.88l1328.23 21.79 1.1 -3530.05c322.55,336.14 1649.95,2842.68 1837.97,2887.75l524.06 0c190.65,-44.99 1588.01,-2734.36 1842.38,-2947.58l13.98 3566.83 1327.24 23.1 -15.32 -6086.84 -1150.87 -13.55c-180.43,241.29 -396.55,649.68 -556.71,922.02l-1692.6 2848.56 -2289.18 -3769.86 -1162.1 2.45 -8.18 6075.38z"/><polygon points="50956.65,44775.29 55427.66,44776.86 55427.62,43624.24 52379.96,43623.23 52371.12,38678.9 50956.67,38679.33 "/><path d="M61052.11 42069.08c-341.48,2407.16 -4164.51,2035.42 -3757.71,-695.46 355.91,-2389.35 4142.16,-2014.49 3757.71,695.46zm-2386.99 -3456.41c-1727.04,246.79 -3111.34,1618.35 -2790.43,3642.37 265.82,1676.56 1834.4,2862.09 3839.55,2592.47 1694.21,-227.82 3081.62,-1693.62 2747.48,-3679.96 -274.34,-1630.93 -1843.02,-2834.03 -3796.6,-2554.88z"/><path d="M68973.73 44103.8l4.18 -2457.14 -1291.42 -14.1 -0.82 1797.79c-702.79,214.31 -1384.34,475.87 -2243.89,-81.31 -1264.23,-819.51 -1102,-3043.95 553.76,-3490.2 790.16,-212.97 1610.13,-5.24 2149.06,599.24 138.17,-59.29 23.95,6.11 144.75,-96.25 42.15,-35.71 66.68,-65.31 111.73,-105.49 177.39,-158.16 537.94,-449.44 668.05,-632.85 -1539.51,-1874.33 -5714.85,-1252.53 -5878.69,1880.76 -125.54,2400.69 1917.18,3671.67 4013.25,3323.5 632.79,-105.1 1387.64,-389.71 1770.04,-723.95z"/></g></g></svg></div>
+              <div class="jv__tag" role="text">
+                <span class="jv__tag-drop" aria-hidden="true"><svg viewBox="0 0 28 36" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="jvTagDrop" cx="38%" cy="36%" r="66%"><stop offset="0%" stop-color="#FF5872"/><stop offset="60%" stop-color="#E11D39"/><stop offset="100%" stop-color="#A00C24"/></radialGradient></defs><path d="M14 1 C14 1 26 15 26 24 C26 30.6 20.6 35 14 35 C7.4 35 2 30.6 2 24 C2 15 14 1 14 1Z" fill="url(#jvTagDrop)"/><path d="M14 19 C12 19 10.5 20.5 10.5 22.5 C10.5 25 14 28.5 14 28.5 C14 28.5 17.5 25 17.5 22.5 C17.5 20.5 16 19 14 19Z M12.6 22.5 C12.6 21.7 13.2 21 14 21 C14.8 21 15.4 21.7 15.4 22.5 C15.4 23.5 14 24.8 14 24.8 C14 24.8 12.6 23.5 12.6 22.5Z" fill="#fff" opacity=".95"/></svg></span>
+                <span class="jv__tag-text">Junho Vermelho</span>
+              </div>
+              <h1 class="jv__headline"><span class="line">Doar sangue</span><span class="line">é transportar <span class="jv__hl">vida</span><span class="jv__hl">.</span></span></h1>
+              <p class="jv__sub">Neste <strong>Junho Vermelho</strong>, a ETMLOG entra na rota da vida — e convida você também.</p>
+              <div class="jv__rule" aria-hidden="true"><span class="jv__rule-dot"></span><span class="jv__rule-line"></span><span class="jv__rule-dot jv__rule-dot--orange"></span></div>
+              <div class="jv__signature">
+                <svg class="jv__people" viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="19" cy="13" r="5.5" stroke="#3EA5F0"/><circle cx="37" cy="13" r="5.5" stroke="#3EA5F0"/><path d="M7 39 C7 30 12 24 19 24 C26 24 31 30 31 39" stroke="#3EA5F0"/><path d="M25 39 C25 30 30 24 37 24 C44 24 49 30 49 39" stroke="#3EA5F0"/><path d="M22 22 C24 24 32 24 34 22" stroke="#F27507"/></svg>
+                <span class="jv__signature-text">A logística nos conecta.<br>As pessoas nos unem.</span>
+              </div>
+            </div>
+            <div class="jv__right" aria-hidden="true">
+              <svg class="jv__art" viewBox="0 0 360 540" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <radialGradient id="jvBigDrop" cx="36%" cy="32%" r="70%"><stop offset="0%" stop-color="#FF6076"/><stop offset="45%" stop-color="#E11D39"/><stop offset="100%" stop-color="#8C0820"/></radialGradient>
+                  <linearGradient id="jvRouteGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3EA5F0"/><stop offset="100%" stop-color="#2A5EB9"/></linearGradient>
+                  <filter id="jvGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                </defs>
+                <g class="jv__route" filter="url(#jvGlow)"><path d="M200 210 L200 280 L120 280 L120 350 L240 350 L240 420 L80 420 L80 490" fill="none" stroke="url(#jvRouteGrad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+                <g class="jv__route-dots"><circle cx="200" cy="280" r="6" fill="#0a2240" stroke="#3EA5F0" stroke-width="2.5"/><circle cx="120" cy="280" r="6" fill="#0a2240" stroke="#3EA5F0" stroke-width="2.5"/><circle cx="120" cy="350" r="6" fill="#0a2240" stroke="#3EA5F0" stroke-width="2.5"/><circle cx="240" cy="350" r="6" fill="#0a2240" stroke="#3EA5F0" stroke-width="2.5"/><circle cx="240" cy="420" r="6" fill="#0a2240" stroke="#3EA5F0" stroke-width="2.5"/><circle cx="80" cy="420" r="6" fill="#0a2240" stroke="#3EA5F0" stroke-width="2.5"/><circle cx="80" cy="490" r="6" fill="#0a2240" stroke="#3EA5F0" stroke-width="2.5"/></g>
+                <circle class="jv__art-pulse" cx="200" cy="120" r="100" fill="rgba(225,29,57,.18)"/>
+                <circle class="jv__art-pulse jv__art-pulse--2" cx="200" cy="120" r="100" fill="rgba(225,29,57,.12)"/>
+                <g class="jv__art-drop"><path d="M200 30 C200 30 300 145 300 215 C300 270 255 305 200 305 C145 305 100 270 100 215 C100 145 200 30 200 30Z" fill="url(#jvBigDrop)"/><path d="M118 195 C124 178 138 165 158 158 C168 154 174 158 168 168 C152 196 140 220 140 240 C140 245 132 245 128 238 C118 222 114 210 118 195Z" fill="rgba(255,255,255,.12)"/><path class="jv__art-heart" d="M200 158 C190 148 170 148 165 165 C160 182 178 200 200 218 C222 200 240 182 235 165 C230 148 210 148 200 158Z" fill="#fff"/></g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slider__dots" id="heroSliderDots" aria-label="Seletor de slides" hidden>
+        <button class="hero-slider__dot is-active" data-target="0" type="button" aria-label="Slide 1 — Institucional"></button>
+        <button class="hero-slider__dot" data-target="1" type="button" aria-label="Slide 2 — Junho Vermelho"></button>
+      </div>
       </div>
     </div>
   </div>
@@ -2620,58 +2356,36 @@ html:not(.intro-pending) .hero-route,
           <span class="id">// missão</span>
           <span class="status"><span class="dot"></span>operacional</span>
         </div>
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <h3>Agregar valor à logística brasileira.</h3>
-        <p>Agregar valor à logística brasileira através de inovações que impactem positivamente na vida de todos onde a ETMLOG estiver presente.</p>
+        <h3>Gerar valor para a logística brasileira.</h3>
+        <p>Gerar valor para a logística brasileira por meio de soluções inovadoras que promovam eficiência, desenvolvimento e impacto positivo onde a ETMLOG estiver presente.</p>
       </article>
 
       <article class="bento-card span-3 reveal">
         <div class="meta"><span class="id">// visão</span><span class="status"><span class="dot"></span>contínuo</span></div>
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/></svg>
-        <h3>Crescer 10× nos próximos 5 anos.</h3>
-        <p>Desenvolver soluções logísticas que permitam um crescimento exponencial de 10 vezes nos próximos 5 anos, atendendo 540 clientes anualmente e aumentando significativamente o lucro até 2028.</p>
-      </article>
-
-      <article class="bento-card span-2 reveal">
-        <div class="meta"><span class="id">// valor</span></div>
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        <h3>Comprometimento</h3>
-        <p>Assumimos cada operação com responsabilidade e presença até o fim.</p>
-      </article>
-
-      <article class="bento-card span-2 reveal">
-        <div class="meta"><span class="id">// valor</span></div>
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <h3>Segurança</h3>
-        <p>Proteção da carga, da operação e das pessoas em cada etapa.</p>
-      </article>
-
-      <article class="bento-card span-2 reveal">
-        <div class="meta"><span class="id">// valor</span></div>
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        <h3>Satisfação do cliente</h3>
-        <p>O cliente é a razão do serviço — cada entrega é uma promessa cumprida.</p>
-      </article>
-
-      <article class="bento-card span-2 reveal">
-        <div class="meta"><span class="id">// valor</span></div>
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        <h3>Investimento em conhecimento</h3>
-        <p>Aprender e evoluir constantemente é o que sustenta nossa operação.</p>
-      </article>
-
-      <article class="bento-card span-2 reveal">
-        <div class="meta"><span class="id">// valor</span></div>
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        <h3>Fazer um mundo melhor</h3>
-        <p>Cada operação deixa um impacto — queremos que ele seja positivo.</p>
+        <h3>Referência nacional em inteligência logística industrial.</h3>
+        <p>Consolidar-se nacionalmente como referência em inteligência logística industrial, gerando eficiência operacional com foco em resultados sustentáveis e relações de longo prazo.</p>
       </article>
 
       <article class="bento-card span-2 reveal">
         <div class="meta"><span class="id">// valor</span></div>
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        <h3>Servir</h3>
-        <p>Estar ao lado de quem confia em nós — servir é a base da ETMLOG.</p>
+        <h3>Atendimento humano</h3>
+        <p>Falar com gente, não com formulário. Esse é o padrão.</p>
+      </article>
+
+      <article class="bento-card span-2 reveal">
+        <div class="meta"><span class="id">// valor</span></div>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <h3>Responsabilidade operacional</h3>
+        <p>Quando a carga é nossa, ela é nossa — sem terceirizar a preocupação.</p>
+      </article>
+
+      <article class="bento-card span-2 reveal">
+        <div class="meta"><span class="id">// valor</span></div>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <h3>Compromisso com o resultado</h3>
+        <p>Acompanhar a entrega como quem responde por ela.</p>
       </article>
     </div>
   </div>
@@ -2694,6 +2408,71 @@ html:not(.intro-pending) .hero-route,
       <div class="pillar reveal"><div class="pn">// 05</div><h4>Agilidade</h4><p>Decisão rápida, retorno rápido. A operação não para, e o atendimento acompanha esse ritmo.</p></div>
       <div class="pillar reveal"><div class="pn">// 06</div><h4>Compromisso</h4><p>Cada entrega carrega a reputação da ETMLOG. Por isso, cada uma é tratada com seriedade.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- ====================== POLÍTICA DA QUALIDADE ====================== -->
+<section class="section section--gray" id="qualidade" style="padding:80px 0">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <span class="eyebrow">// sistema de gestão da qualidade</span>
+      <h2>Política e Objetivos da Qualidade</h2>
+      <p>Compromissos formais que orientam o sistema de gestão da ETMLOG e garantem excelência em cada operação.</p>
+    </div>
+
+    <!-- Política da Qualidade -->
+    <div class="bento reveal" style="margin-bottom:56px;grid-auto-rows:auto">
+      <article class="bento-card bento-card--accent span-6" style="padding:40px 44px">
+        <div class="meta">
+          <span class="id">// política da qualidade</span>
+          <span class="status"><span class="dot"></span>Rev 1 · vigente</span>
+        </div>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:40px;height:40px;margin:14px 0 18px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        <h3 style="font-size:1.35rem;margin-bottom:16px">Compromisso com a evolução e o sucesso de nossas atividades.</h3>
+        <p style="font-size:1.02rem;line-height:1.75;max-width:760px">A ETMLOG busca evolução e sucesso de suas atividades e de seu sistema de gestão da qualidade, através do atendimento com eficiência e qualidade às solicitações dos clientes, do desenvolvimento profissional de seus colaboradores, da relação de parcerias com os fornecedores e do crescimento da empresa.</p>
+      </article>
+    </div>
+
+    <!-- Objetivos da Qualidade -->
+    <div class="section-head reveal" style="margin-bottom:36px">
+      <span class="eyebrow">// objetivos da qualidade · rev 1</span>
+      <h2 style="margin-bottom:0">Cinco objetivos que guiam cada decisão.</h2>
+    </div>
+
+    <div class="intro-blocks reveal" style="grid-template-columns:repeat(5,1fr)">
+      <div class="intro-block">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="ico"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span class="tag">// 01</span>
+        <h4>Satisfação dos clientes</h4>
+        <p>Assegurar a satisfação dos clientes em cada operação entregue.</p>
+      </div>
+      <div class="intro-block">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="ico"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        <span class="tag">// 02</span>
+        <h4>Crescimento da empresa</h4>
+        <p>Assegurar o crescimento sustentável e contínuo da ETMLOG.</p>
+      </div>
+      <div class="intro-block">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="ico"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><line x1="12" y1="14" x2="12" y2="20"/></svg>
+        <span class="tag">// 03</span>
+        <h4>Desenvolvimento dos colaboradores</h4>
+        <p>Buscar o desenvolvimento profissional de todos os colaboradores.</p>
+      </div>
+      <div class="intro-block">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="ico"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93A10 10 0 1 1 4.93 19.07"/><path d="M22 2L12 12"/></svg>
+        <span class="tag">// 04</span>
+        <h4>Melhoria de processos</h4>
+        <p>Buscar melhorias contínuas dos processos internos de gestão e operação.</p>
+      </div>
+      <div class="intro-block" style="border-right:0">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="ico"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+        <span class="tag">// 05</span>
+        <h4>Parcerias com fornecedores</h4>
+        <p>Realizar parcerias efetivas e duradouras com fornecedores estratégicos.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -4013,10 +3792,10 @@ document.addEventListener('keydown', e => {
   if(slides.length < 2) return;
   let currentIdx = 0;
   let autoTimer = null;
-  const AUTO_MS = 5000;
+  const AUTO_MS = 9000;
   const INTRO_PERSIST_KEY = 'etmlog_hero_intro_seen';
   const introSeen = (() => { try { return !!sessionStorage.getItem(INTRO_PERSIST_KEY); } catch(e){ return false; } })();
-  const initialDelay = introSeen ? 3000 : 13000;
+  const initialDelay = introSeen ? 800 : 10500;
   function go(idx){
     idx = ((idx % slides.length) + slides.length) % slides.length;
     slides[currentIdx]?.classList.remove('is-active');
