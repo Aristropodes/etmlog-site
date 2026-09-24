@@ -1927,9 +1927,8 @@ p{margin:0 0 16px;color:var(--text-soft)}
 .hero-slider__dot.is-active{background:#fff;transform:scale(1.25)}
 
 /* === ISO 9001 BADGE === */
-@keyframes isoBadgeIn{from{opacity:0;transform:rotate(-8deg) scale(.8)}to{opacity:1;transform:rotate(-8deg) scale(1)}}
-.iso-badge{position:fixed;bottom:28px;right:28px;width:128px;height:128px;z-index:900;opacity:0;pointer-events:none;will-change:opacity,transform;transform:rotate(-8deg)}
-.iso-badge.is-visible{animation:isoBadgeIn .9s cubic-bezier(.22,.61,.36,1) forwards}
+.iso-badge{position:fixed;bottom:28px;right:28px;width:128px;height:128px;z-index:9999;opacity:0;pointer-events:none;transform:rotate(-8deg) scale(.8);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1)}
+.iso-badge.is-visible{opacity:1!important;transform:rotate(-8deg) scale(1)!important;pointer-events:auto}
 .iso-badge img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 6px 16px rgba(0,20,60,.35))}
 @media(max-width:600px){.iso-badge{width:88px;height:88px;bottom:16px;right:16px}}
 </style>
